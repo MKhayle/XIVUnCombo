@@ -1,0 +1,10 @@
+{
+  "Author": "Khayle, daemitus, attick",
+  "Name": "XIV Uncombo",
+  "Punchline": "Splits combos into more button for more button bloating. Requires BLU spells.",
+  "Description": "This plugin splits combos and mutually exclusive abilities onto several buttons. For example, a 1-1-1 combo would become 1-2-3.",
+  "RepoUrl": "https://github.com/MKhayle/XIVUncombo",
+  "IconUrl": "https://raw.githubusercontent.com/MKhayle/XIVUncombo/master/res/icon.png",
+  "ImageUrls": [],
+  "DalamudApiLevel": 10
+}

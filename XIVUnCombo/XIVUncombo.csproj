@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Authors>Khayle, daemitus, attick</Authors>
+    <Company>-</Company>
+    <Version>1.0.0.0</Version>
+    <Description>This plugin splits combos and native abilities into more buttons.</Description>
+    <Copyright>Copyleft attick 2020 baybeeee</Copyright>
+    <PackageProjectUrl>https://github.com/MKhayle/XIVUncombo</PackageProjectUrl>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Platforms>x64</Platforms>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <NoWarn>CS1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Documentation">
+    <DocumentationFile></DocumentationFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\res\icon.png" Link="images\icon.png" CopyToOutputDirectory="PreserveNewest" Visible="false" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <DalamudLibPath>$(appdata)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblySearchPaths>
+      $(AssemblySearchPaths);
+      $(DalamudLibPath);
+    </AssemblySearchPaths>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="XIVUncombo.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DalamudPackager" Version="2.1.13" />
+    <PackageReference Include="ILRepack" Version="2.1.0-beta1" GeneratePathProperty="true" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.435">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <Reference Include="Dalamud" Private="False" />
+    <Reference Include="FFXIVClientStructs" Private="False" />
+    <Reference Include="ImGui.NET" Private="False" />
+    <Reference Include="Lumina" Private="False" />
+    <Reference Include="Lumina.Excel" Private="False" />
+    <Reference Include="Newtonsoft.Json" Private="False" />
+	  <Reference Include="InteropGenerator.Runtime">
+		  <HintPath>$(DalamudLibPath)InteropGenerator.Runtime.dll</HintPath>
+		  <Private>false</Private>
+	  </Reference>
+  </ItemGroup>
+
+  <Target Name="ILRepack" AfterTargets="Build">
+    <ItemGroup>
+      <InputAssemblies Include="$(TargetPath)" />
+      <InputAssemblies Include="$(TargetDir)*.dll" Exclude="$(TargetPath)" />
+    </ItemGroup>
+    <Exec Command="$(PkgILRepack)\tools\ILRepack.exe /lib:$(DalamudLibPath) /out:$(TargetDir)$(TargetFileName) @(InputAssemblies, ' ')" />
+  </Target>
+
+  <Target Name="CleanOutDir" AfterTargets="ILRepack">
+    <ItemGroup>
+      <DeleteFiles Include="$(TargetDir)*.dll" Exclude="$(TargetDir)$(TargetName).dll" />
+      <DeleteFiles Include="$(TargetDir)*.pdb" Exclude="$(TargetDir)$(TargetName).pdb" />
+      <DeleteFiles Include="$(TargetDir)*.xml" />
+    </ItemGroup>
+    <Message Text="Deleting @(DeleteFiles)" Importance="high" />
+    <Delete Files="@(DeleteFiles)" />
+  </Target>
+</Project>
