@@ -138,7 +138,6 @@ internal class ConfigWindow : Window
             Service.Configuration.Save();
         }
 
-
         ImGui.PopItemWidth();
 
         ImGui.PushStyleColor(ImGuiCol.Text, this.shadedColor);

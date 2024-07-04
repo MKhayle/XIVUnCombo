@@ -80,7 +80,7 @@ internal static class SAM
             HissatsuSenei = 72,
             TsubameGaeshi = 76,
             Shoha = 80,
-            //Shoha2 = 82,
+            // Shoha2 = 82,
             Hyosetsu = 86,
             Fuko = 86,
             OgiNamikiri = 90,
