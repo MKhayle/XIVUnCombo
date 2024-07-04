@@ -196,7 +196,6 @@ internal class RedMageUncombo : CustomCombo
                 {
                     return RDM.Verflare;
                 }
-
             }
 
             if (IsEnabled(CustomComboPreset.RedMageVerHolyFeature))

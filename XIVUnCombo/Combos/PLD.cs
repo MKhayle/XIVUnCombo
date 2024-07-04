@@ -83,7 +83,6 @@ internal static class PLD
     }
 }
 
-
 internal class PaladinUncombo : CustomCombo
 {
     protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.PaladinUncombo;
@@ -107,7 +106,6 @@ internal class PaladinUncombo : CustomCombo
 
         if (IsEnabled(CustomComboPreset.PaladinBladesUncombo))
         {
-
             if (actionID == BLU.BLU3)
             {
                 return PLD.Confiteor;

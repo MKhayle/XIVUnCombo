@@ -135,7 +135,6 @@ internal static class SMN
     }
 }
 
-
 internal class SummonerUncombo : CustomCombo
 {
     protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.SummonerUncombo;

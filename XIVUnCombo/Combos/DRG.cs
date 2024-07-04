@@ -88,6 +88,7 @@ internal static class DRG
             WyrmwindThrust = 90;
     }
 }
+
 internal class DragoonUncombo : CustomCombo
 {
     protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.DragoonUncombo;

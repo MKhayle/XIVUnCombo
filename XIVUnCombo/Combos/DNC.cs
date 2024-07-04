@@ -20,7 +20,7 @@ internal static class DNC
         Bladeshower = 15994,
         RisingWindmill = 15995,
         Bloodshower = 15996,
-        //Steps
+        // Steps
         Emboite = 15999,
         Entrechat = 16000,
         Jete = 16001,
@@ -233,7 +233,7 @@ internal class DancerUncombo : CustomCombo
                     }
                 }
             }
-            
+
             if (IsEnabled(CustomComboPreset.DancerDawnUncombo))
             {
                 if (actionID == BLU.BLU18)

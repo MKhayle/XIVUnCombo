@@ -202,7 +202,6 @@ internal class NinjaUncombo : CustomCombo
 
         if (IsEnabled(CustomComboPreset.NinjaTenriJidoUncombo))
         {
-
             if (actionID == BLU.BLU14)
             {
                 return NIN.TenChiJin;

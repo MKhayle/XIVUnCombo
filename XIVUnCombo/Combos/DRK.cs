@@ -66,7 +66,6 @@ internal static class DRK
     }
 }
 
-
 internal class DarKKnightUncombo : CustomCombo
 {
     protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.DarkKnightUncombo;
@@ -95,6 +94,7 @@ internal class DarKKnightUncombo : CustomCombo
                 return DRK.Torcleaver;
             }
         }
+
         if (IsEnabled(CustomComboPreset.DarkKnightDeliriumAoEUncombo))
         {
             if (actionID == BLU.BLU5)

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 
 using Dalamud.Game.ClientState.JobGauge.Types;
 using FFXIVClientStructs.FFXIV.Client.Game.Gauge;
@@ -56,8 +55,6 @@ internal static class PCT
         AnimalMotif2 = 35347,
         WeaponMotif2 = 35348,
         LandscapeMotif2 = 35349;
-
-
 
     public static class Buffs
     {
@@ -150,7 +147,6 @@ internal static class PCT
                 }
             }
 
-
             if (IsEnabled(CustomComboPreset.PictomancerFire2Uncombo))
             {
                 if (actionID == BLU.BLU4)
@@ -168,7 +164,6 @@ internal static class PCT
                     return PCT.ExtraWaterBlue;
                 }
             }
-
 
             if (IsEnabled(CustomComboPreset.PictomancerBlizzardUncombo))
             {
@@ -224,8 +219,8 @@ internal static class PCT
                     return PCT.PolishingHammer;
                 }
             }
+
             return actionID;
         }
     }
-
 }

@@ -106,6 +106,7 @@ internal class MachinistUncombo : CustomCombo
                 return MCH.Detonator;
             }
         }
+
         if (IsEnabled(CustomComboPreset.MachinistExcavatorUncombo))
         {
             if (actionID == BLU.BLU3)

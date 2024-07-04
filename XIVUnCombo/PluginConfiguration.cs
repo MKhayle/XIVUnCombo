@@ -16,7 +16,6 @@ namespace XIVUncombo;
 [Serializable]
 public class PluginConfiguration : IPluginConfiguration
 {
-    private static readonly HashSet<CustomComboPreset> SecretCombos;
     private static readonly Dictionary<CustomComboPreset, CustomComboPreset[]> ConflictingCombos;
     private static readonly Dictionary<CustomComboPreset, CustomComboPreset?> ParentCombos;  // child: parent
 
@@ -56,7 +55,6 @@ public class PluginConfiguration : IPluginConfiguration
     /// Gets or sets a value indicating whether to hide the children of a feature if it is disabled.
     /// </summary>
     public bool HideChildren { get; set; } = false;
-
 
     /// <summary>
     /// Save the configuration to disk.

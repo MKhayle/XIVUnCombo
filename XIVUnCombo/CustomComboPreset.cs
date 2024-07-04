@@ -298,7 +298,6 @@ public enum CustomComboPreset
     [CustomComboInfo("Blitz Uncombo (lvl 60+)", "Water Cannon, Flame Thrower, Aqua Breath and Flying Frenzy will respectively become Elixir Field/Elixir Burst, Celestial Revolution, Flint Strike/Rising Phoenix and Tornado Kick/Phantom Rush.", MNK.JobID)]
     MonkBlitzUncombo = 2002,
 
-
     #endregion
     // ====================================================================================
     #region NINJA
@@ -502,11 +501,9 @@ public enum CustomComboPreset
     [CustomComboInfo("Prefulgence Uncombo (lvl 100)", "Flying Sardine and Snort will respectively become Manafication and Prefulgence.", RDM.JobID)]
     RedMagePrefulgenceUncombo = 3512,
 
-
     #endregion
     // ====================================================================================
     #region SAGE
-
 
     #endregion
     // ====================================================================================
@@ -574,7 +571,6 @@ public enum CustomComboPreset
     #endregion
     // ====================================================================================
     #region SCHOLAR
-
 
     #endregion
     // ====================================================================================
@@ -717,7 +713,6 @@ public enum CustomComboPreset
     #endregion
     // ====================================================================================
     #region WARRIOR
-
 
     [CustomComboInfo("Enables Uncombo", "You will have to manually assign BLU spells 1-8 to your hotbar.", WAR.JobID)]
     WarriorUncombo = 2101,

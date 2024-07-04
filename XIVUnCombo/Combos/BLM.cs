@@ -81,7 +81,6 @@ internal static class BLM
     }
 }
 
-
 internal class BlackMageUncombo : CustomCombo
 {
     protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.BlackMageUncombo;

@@ -81,7 +81,6 @@ internal static class VPR
     }
 }
 
-
 internal class ViperUncombo : CustomCombo
 {
     protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.ViperUncombo;

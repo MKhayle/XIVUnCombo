@@ -45,7 +45,7 @@ internal static class RPR
         HellsIngress = 24401,
         HellsEgress = 24402,
         Regress = 24403,
-        //DT
+        // DT
         Sacrificium = 36969,
         ExecutionerGibet = 36970,
         ExecutionerGallows = 36971,
@@ -225,7 +225,6 @@ internal class ReaperUncombo : CustomCombo
 
         if (IsEnabled(CustomComboPreset.ReaperExecutionerUncombo))
         {
-
             if (actionID == BLU.BLU7)
             {
                 return RPR.Gibbet;

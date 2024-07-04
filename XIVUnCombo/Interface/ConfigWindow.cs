@@ -117,7 +117,6 @@ internal class ConfigWindow : Window
         var conflicts = Service.Configuration.GetConflicts(preset);
         var parent = Service.Configuration.GetParent(preset);
 
-
         ImGui.PushItemWidth(200);
 
         if (ImGui.Checkbox(info.FancyName, ref enabled))

@@ -27,13 +27,13 @@ internal static class SAM
         Higanbana = 7489,
         Iaijutsu = 7867,
         TsubameGaeshi = 16483,
-        //Kaeshi
+        // Kaeshi
         KaeshiHiganbana = 16484,
         KaeshiGoken = 16485,
         KaeshiSetsugekka = 16486,
         KaeshiNamikiri = 25782,
         Shoha = 16487,
-        //Tendo
+        // Tendo
         TendoGoken = 36965,
         TendoSetsugekka = 36966,
         TendoKaeshiGoken = 36967,
@@ -155,7 +155,6 @@ internal class SamuraiUncombo : CustomCombo
 
         if (IsEnabled(CustomComboPreset.SamuraiTendoUncombo))
         {
-
             if (IsEnabled(CustomComboPreset.SamuraiTendoGokenFeature))
             {
                 if (actionID == BLU.BLU8)

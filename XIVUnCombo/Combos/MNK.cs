@@ -121,7 +121,6 @@ internal class MonkUncombo : CustomCombo
                     return MNK.TornadoKick;
                 else return MNK.PhantomRush;
             }
-
         }
 
         return actionID;

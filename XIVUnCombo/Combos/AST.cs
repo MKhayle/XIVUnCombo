@@ -73,7 +73,6 @@ internal static class AST
     }
 }
 
-
 internal class AstrologianUncombo : CustomCombo
 {
     protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.AstrologianUncombo;
@@ -156,6 +155,7 @@ internal class AstrologianUncombo : CustomCombo
             {
                 return AST.AstralDraw;
             }
+
             if (actionID == BLU.BLU10)
             {
                 return AST.UmbralDraw;

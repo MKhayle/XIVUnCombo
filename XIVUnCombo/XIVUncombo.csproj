@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Dalamud.NET.Sdk/9.0.2">
   <PropertyGroup>
     <Authors>Khayle, daemitus, attick</Authors>
     <Company>-</Company>
@@ -52,7 +51,6 @@
 
   <ItemGroup>
     <PackageReference Include="DalamudPackager" Version="2.1.13" />
-    <PackageReference Include="ILRepack" Version="2.1.0-beta1" GeneratePathProperty="true" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.435">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -68,22 +66,4 @@
 		  <Private>false</Private>
 	  </Reference>
   </ItemGroup>
-
-  <Target Name="ILRepack" AfterTargets="Build">
-    <ItemGroup>
-      <InputAssemblies Include="$(TargetPath)" />
-      <InputAssemblies Include="$(TargetDir)*.dll" Exclude="$(TargetPath)" />
-    </ItemGroup>
-    <Exec Command="$(PkgILRepack)\tools\ILRepack.exe /lib:$(DalamudLibPath) /out:$(TargetDir)$(TargetFileName) @(InputAssemblies, ' ')" />
-  </Target>
-
-  <Target Name="CleanOutDir" AfterTargets="ILRepack">
-    <ItemGroup>
-      <DeleteFiles Include="$(TargetDir)*.dll" Exclude="$(TargetDir)$(TargetName).dll" />
-      <DeleteFiles Include="$(TargetDir)*.pdb" Exclude="$(TargetDir)$(TargetName).pdb" />
-      <DeleteFiles Include="$(TargetDir)*.xml" />
-    </ItemGroup>
-    <Message Text="Deleting @(DeleteFiles)" Importance="high" />
-    <Delete Files="@(DeleteFiles)" />
-  </Target>
 </Project>
