@@ -14,7 +14,7 @@ For some jobs, this adds a massive amount of hotbar bloating (looking at you, VP
 * Compile it, or wait for it to be approved as a main repo plugin.
 * If it does happen, just type `/xlplugins` in-game to access the plugin installer and updater. Any releases on this github page have been removed to facilitate proper installation going forward.
 ## In-game usage
-* Type `/unpcombo` to pull up a GUI for editing active uncombo replacements.
+* Type `/puncombo` to pull up a GUI for editing active uncombo replacements.
 * Drag the named abilities from your BLU Spellbook onto your hotbar to use.
   * For example, to use AST's Minor Arcana Lord of Crowns feature, first check the box, then place Loom on your bar from your BLU Spellbook. It should automatically turn into Lord of Crowns.
   * The description associated with each combo should be enough to tell you which ability needs to be placed on the hotbar.
@@ -23,4 +23,4 @@ For some jobs, this adds a massive amount of hotbar bloating (looking at you, VP
 ![](https://github.com/MKhayle/XIVUnCombo/blob/main/res/hardmodepicto.gif?raw=true)
 
 ## Known Issues
-* None, for now!
+* VPR is a mess, I'll organize it once I'll know how to read tooltips!
