@@ -19,8 +19,8 @@ For some jobs, this adds a massive amount of hotbar bloating (looking at you, VP
   * For example, to use AST's Minor Arcana Lord of Crowns feature, first check the box, then place Loom on your bar from your BLU Spellbook. It should automatically turn into Lord of Crowns.
   * The description associated with each combo should be enough to tell you which ability needs to be placed on the hotbar.
 ### Examples
-![](https://github.com/MKhayle/XIVUncombo/raw/master/res/lordsofcrown.gif)
-![](https://github.com/MKhayle/XIVUncombo/raw/master/res/hardmodepicto.gif)
+![](https://github.com/MKhayle/XIVUnCombo/blob/main/res/lordsofcrown.gif?raw=true)
+![](https://github.com/MKhayle/XIVUnCombo/blob/main/res/hardmodepicto.gif?raw=true)
 
 ## Known Issues
 * None, for now!
