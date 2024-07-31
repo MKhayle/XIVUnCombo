@@ -24,3 +24,6 @@ For some jobs, this adds a massive amount of hotbar bloating (looking at you, VP
 
 ## Known Issues
 * VPR is a mess, I'll organize it once I'll know how to read tooltips!
+
+# Notable comments at the bottom:
+- "[16:39] Glyceri : great, what a waste"
