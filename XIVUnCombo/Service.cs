@@ -24,11 +24,6 @@ internal class Service
     internal static PluginConfiguration Configuration { get; set; } = null!;
 
     /// <summary>
-    /// Gets or sets the plugin caching mechanism.
-    /// </summary>
-    internal static CustomComboCache ComboCache { get; set; } = null!;
-
-    /// <summary>
     /// Gets or sets the plugin icon replacer.
     /// </summary>
     internal static IconReplacer IconReplacer { get; set; } = null!;
@@ -43,12 +38,6 @@ internal class Service
     /// </summary>
     [PluginService]
     internal static IDalamudPluginInterface Interface { get; private set; } = null!;
-
-    /// <summary>
-    /// Gets the Dalamud buddy list.
-    /// </summary>
-    [PluginService]
-    internal static IBuddyList BuddyList { get; private set; } = null!;
 
     /// <summary>
     /// Gets the Dalamud chat gui.
@@ -69,40 +58,16 @@ internal class Service
     internal static ICommandManager CommandManager { get; private set; } = null!;
 
     /// <summary>
-    /// Gets the Dalamud condition.
-    /// </summary>
-    [PluginService]
-    internal static ICondition Condition { get; private set; } = null!;
-
-    /// <summary>
     /// Gets the Dalamud data manager.
     /// </summary>
     [PluginService]
     internal static IDataManager DataManager { get; private set; } = null!;
 
     /// <summary>
-    /// Gets the Dalamud framework manager.
+    /// Gets the Dalamud texture provider.
     /// </summary>
     [PluginService]
-    internal static IFramework Framework { get; private set; } = null!;
-
-    /// <summary>
-    /// Gets the Dalamud job gauges.
-    /// </summary>
-    [PluginService]
-    internal static IJobGauges JobGauges { get; private set; } = null!;
-
-    /// <summary>
-    /// Gets the Dalamud object table.
-    /// </summary>
-    [PluginService]
-    internal static IObjectTable ObjectTable { get; private set; } = null!;
-
-    /// <summary>
-    /// Gets the Dalamud target manager.
-    /// </summary>
-    [PluginService]
-    internal static ITargetManager TargetManager { get; private set; } = null!;
+    internal static ITextureProvider TextureProvider { get; private set; } = null!;
 
     /// <summary>
     /// Gets the Dalamud plugin log.
