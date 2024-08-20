@@ -62,18 +62,6 @@ internal static class VPR
             Worldswallower = 39190,
             WrithingSnap = 34632;
 
-    public static class Buffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte

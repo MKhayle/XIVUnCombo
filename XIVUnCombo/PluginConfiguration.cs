@@ -16,17 +16,10 @@ namespace XIVUncombo;
 [Serializable]
 public class PluginConfiguration : IPluginConfiguration
 {
-    private static readonly Dictionary<CustomComboPreset, CustomComboPreset[]> ConflictingCombos;
     private static readonly Dictionary<CustomComboPreset, CustomComboPreset?> ParentCombos;  // child: parent
 
     static PluginConfiguration()
     {
-        ConflictingCombos = Enum.GetValues<CustomComboPreset>()
-            .Distinct() // Prevent ArgumentExceptions from adding the same int twice, should not be seen anymore
-            .ToDictionary(
-                preset => preset,
-                preset => preset.GetAttribute<ConflictingCombosAttribute>()?.ConflictingPresets ?? Array.Empty<CustomComboPreset>());
-
         ParentCombos = Enum.GetValues<CustomComboPreset>()
             .Distinct() // Prevent ArgumentExceptions from adding the same int twice, should not be seen anymore
             .ToDictionary(
@@ -67,11 +60,6 @@ public class PluginConfiguration : IPluginConfiguration
     public bool HideKofi { get; set; } = false;
 
     /// <summary>
-    /// Gets or sets a value indicating whether to hide the children of a feature if it is disabled.
-    /// </summary>
-    public bool HideChildren { get; set; } = false;
-
-    /// <summary>
     /// Gets or sets a value indicating whether to hide the icons of a feature.
     /// </summary>
     public bool HideIcons { get; set; } = false;
@@ -99,14 +87,6 @@ public class PluginConfiguration : IPluginConfiguration
     /// <returns>The boolean representation.</returns>
     public bool IsEnabled(CustomComboPreset preset)
         => this.EnabledActions.Contains(preset);
-
-    /// <summary>
-    /// Gets an array of conflicting combo presets.
-    /// </summary>
-    /// <param name="preset">Preset to check.</param>
-    /// <returns>The conflicting presets.</returns>
-    public CustomComboPreset[] GetConflicts(CustomComboPreset preset)
-        => ConflictingCombos[preset];
 
     /// <summary>
     /// Gets the parent combo preset if it exists, or null.

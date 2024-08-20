@@ -32,19 +32,6 @@ internal static class SCH
         SummonSelene = 17216,
         Ruin2 = 17870;
 
-    public static class Buffs
-    {
-        public const ushort
-            Dissipation = 791,
-            Recitation = 1896;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte

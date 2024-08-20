@@ -47,29 +47,6 @@ internal static class DNC
         StarfallDance = 25792,
         DanceOfTheDawn = 36985;
 
-    public static class Buffs
-    {
-        public const ushort
-            FlourishingSymmetry = 3017,
-            FlourishingFlow = 3018,
-            FlourishingFinish = 2698,
-            FlourishingStarfall = 2700,
-            SilkenSymmetry = 2693,
-            SilkenFlow = 2694,
-            StandardStep = 1818,
-            TechnicalStep = 1819,
-            ThreefoldFanDance = 1820,
-            FourfoldFanDance = 2699,
-            LastDanceReady = 3867,
-            FinishingMoveReady = 3868;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte
@@ -99,152 +76,140 @@ internal class DancerUncombo : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (IsEnabled(CustomComboPreset.DancerDanceStepsUncombo))
+        if (IsEnabled(CustomComboPreset.DancerEmboiteFeature))
         {
-            if (IsEnabled(CustomComboPreset.DancerDanceStepsUncombo))
+            if (actionID == BLU.BLU1)
             {
-                if (IsEnabled(CustomComboPreset.DancerEmboiteFeature))
-                {
-                    if (actionID == BLU.BLU1)
-                    {
-                        return DNC.Cascade;
-                    }
-
-                    if (actionID == BLU.BLU2)
-                    {
-                        return DNC.Windmill;
-                    }
-
-                    if (actionID == BLU.BLU3)
-                    {
-                        return DNC.Emboite;
-                    }
-                }
-
-                if (IsEnabled(CustomComboPreset.DancerEntrechatFeature))
-                {
-                    if (actionID == BLU.BLU4)
-                    {
-                        return DNC.Fountain;
-                    }
-
-                    if (actionID == BLU.BLU5)
-                    {
-                        return DNC.Bladeshower;
-                    }
-
-                    if (actionID == BLU.BLU6)
-                    {
-                        return DNC.Entrechat;
-                    }
-                }
-
-                if (IsEnabled(CustomComboPreset.DancerJeteFeature))
-                {
-                    if (actionID == BLU.BLU7)
-                    {
-                        return DNC.ReverseCascade;
-                    }
-
-                    if (actionID == BLU.BLU8)
-                    {
-                        return DNC.RisingWindmill;
-                    }
-
-                    if (actionID == BLU.BLU9)
-                    {
-                        return DNC.Jete;
-                    }
-                }
-
-                if (IsEnabled(CustomComboPreset.DancerPirouetteFeature))
-                {
-                    if (actionID == BLU.BLU9)
-                    {
-                        return DNC.Fountainfall;
-                    }
-
-                    if (actionID == BLU.BLU10)
-                    {
-                        return DNC.Bloodshower;
-                    }
-
-                    if (actionID == BLU.BLU11)
-                    {
-                        return DNC.Pirouette;
-                    }
-                }
+                return DNC.Cascade;
             }
 
-            if (IsEnabled(CustomComboPreset.DancerDancesUncombo))
+            if (actionID == BLU.BLU2)
             {
-                if (IsEnabled(CustomComboPreset.DancerStandardDanceFeature))
-                {
-                    if (actionID == BLU.BLU12)
-                    {
-                        return DNC.StandardStep;
-                    }
-
-                    if (actionID == BLU.BLU13)
-                    {
-                        return DNC.StandardFinish;
-                    }
-                }
-
-                if (IsEnabled(CustomComboPreset.DancerTechnicalDanceFeature))
-                {
-                    if (actionID == BLU.BLU14)
-                    {
-                        return DNC.TechnicalStep;
-                    }
-
-                    if (actionID == BLU.BLU15)
-                    {
-                        return DNC.TechnicalFinish;
-                    }
-                }
+                return DNC.Windmill;
             }
 
-            if (IsEnabled(CustomComboPreset.DancerFinishMovesUncombo))
+            if (actionID == BLU.BLU3)
             {
-                if (IsEnabled(CustomComboPreset.DancerTillanaFeature))
-                {
-                    if (actionID == BLU.BLU12)
-                    {
-                        return DNC.StandardStep;
-                    }
+                return DNC.Emboite;
+            }
+        }
 
-                    if (actionID == BLU.BLU16)
-                    {
-                        return DNC.Tillana;
-                    }
-                }
-
-                if (IsEnabled(CustomComboPreset.DancerFinishingMoveFeature))
-                {
-                    if (actionID == BLU.BLU14)
-                    {
-                        return DNC.TechnicalStep;
-                    }
-
-                    if (actionID == BLU.BLU17)
-                    {
-                        return DNC.FinishingMove;
-                    }
-                }
+        if (IsEnabled(CustomComboPreset.DancerEntrechatFeature))
+        {
+            if (actionID == BLU.BLU4)
+            {
+                return DNC.Fountain;
             }
 
-            if (IsEnabled(CustomComboPreset.DancerDawnUncombo))
+            if (actionID == BLU.BLU5)
             {
-                if (actionID == BLU.BLU18)
-                {
-                    return DNC.SaberDance;
-                }
+                return DNC.Bladeshower;
+            }
 
-                if (actionID == BLU.BLU19)
-                {
-                    return DNC.DanceOfTheDawn;
-                }
+            if (actionID == BLU.BLU6)
+            {
+                return DNC.Entrechat;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.DancerJeteFeature))
+        {
+            if (actionID == BLU.BLU7)
+            {
+                return DNC.ReverseCascade;
+            }
+
+            if (actionID == BLU.BLU8)
+            {
+                return DNC.RisingWindmill;
+            }
+
+            if (actionID == BLU.BLU9)
+            {
+                return DNC.Jete;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.DancerPirouetteFeature))
+        {
+            if (actionID == BLU.BLU10)
+            {
+                return DNC.Fountainfall;
+            }
+
+            if (actionID == BLU.BLU11)
+            {
+                return DNC.Bloodshower;
+            }
+
+            if (actionID == BLU.BLU12)
+            {
+                return DNC.Pirouette;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.DancerStandardDanceFeature))
+        {
+            if (actionID == BLU.BLU13)
+            {
+                return DNC.StandardStep;
+            }
+
+            if (actionID == BLU.BLU14)
+            {
+                return DNC.StandardFinish;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.DancerTechnicalDanceFeature))
+        {
+            if (actionID == BLU.BLU15)
+            {
+                return DNC.TechnicalStep;
+            }
+
+            if (actionID == BLU.BLU16)
+            {
+                return DNC.TechnicalFinish;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.DancerTillanaFeature))
+        {
+            if (actionID == BLU.BLU13)
+            {
+                return DNC.StandardStep;
+            }
+
+            if (actionID == BLU.BLU17)
+            {
+                return DNC.Tillana;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.DancerFinishingMoveFeature))
+        {
+            if (actionID == BLU.BLU15)
+            {
+                return DNC.TechnicalStep;
+            }
+
+            if (actionID == BLU.BLU18)
+            {
+                return DNC.FinishingMove;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.DancerDawnUncombo))
+        {
+            if (actionID == BLU.BLU19)
+            {
+                return DNC.SaberDance;
+            }
+
+            if (actionID == BLU.BLU20)
+            {
+                return DNC.DanceOfTheDawn;
             }
         }
 

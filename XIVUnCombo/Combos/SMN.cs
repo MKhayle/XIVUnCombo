@@ -78,23 +78,6 @@ internal static class SMN
         BrandOfPurgatory = 16515,
         UmbralFlare = 36995;
 
-    public static class Buffs
-    {
-        public const ushort
-            Aetherflow = 304,
-            FurtherRuin = 2701,
-            SearingLight = 2703,
-            IfritsFavor = 2724,
-            GarudasFavor = 2725,
-            TitansFavor = 2853;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte
@@ -141,297 +124,276 @@ internal class SummonerUncombo : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (IsEnabled(CustomComboPreset.SummonerGemshineUncombo))
+        if (IsEnabled(CustomComboPreset.SummonerGemshineIfritFeature))
         {
-            if (IsEnabled(CustomComboPreset.SummonerGemshineIfritFeature))
+            if (actionID == BLU.BLU1)
             {
-                if (actionID == BLU.BLU1)
-                {
-                    if (level < SMN.Levels.Ruin2)
-                        return SMN.RubyRuin;
-                    if (level < SMN.Levels.Ruin3)
-                        return SMN.RubyRuin2;
-                    if (level < SMN.Levels.Rites)
-                        return SMN.RubyRuin3;
-                    return SMN.RubyRite;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerGemshineTitanFeature))
-            {
-                if (actionID == BLU.BLU2)
-                {
-                    if (level < SMN.Levels.Ruin2)
-                        return SMN.TopazRuin;
-                    if (level < SMN.Levels.Ruin3)
-                        return SMN.TopazRuin2;
-                    if (level < SMN.Levels.Rites)
-                        return SMN.TopazRuin3;
-                    return SMN.TopazRite;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerGemshineGarudaFeature))
-            {
-                if (actionID == BLU.BLU3)
-                {
-                    if (level < SMN.Levels.Ruin2)
-                        return SMN.EmeraldRuin;
-                    if (level < SMN.Levels.Ruin3)
-                        return SMN.EmeraldRuin2;
-                    if (level < SMN.Levels.Rites)
-                        return SMN.EmeraldRuin3;
-                    return SMN.EmeraldRite;
-                }
+                if (level <= SMN.Levels.Ruin2)
+                    return SMN.RubyRuin;
+                if (level <= SMN.Levels.Ruin3)
+                    return SMN.RubyRuin2;
+                if (level <= SMN.Levels.Rites)
+                    return SMN.RubyRuin3;
+                return SMN.RubyRite;
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerBrillanceUncombo))
+        if (IsEnabled(CustomComboPreset.SummonerGemshineTitanFeature))
         {
-            if (IsEnabled(CustomComboPreset.SummonerBrillanceIfritFeature))
+            if (actionID == BLU.BLU2)
             {
-                if (actionID == BLU.BLU4)
-                {
-                    if (level < SMN.Levels.TriDisaster)
-                        return SMN.RubyOutburst;
-                    return SMN.RubyCatastrophe;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerBrillanceTitanFeature))
-            {
-                if (actionID == BLU.BLU5)
-                {
-                    if (level < SMN.Levels.TriDisaster)
-                        return SMN.TopazOutburst;
-                    return SMN.TopazCatastrophe;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerBrillanceGarudaFeature))
-            {
-                if (actionID == BLU.BLU6)
-                {
-                    if (level < SMN.Levels.TriDisaster)
-                        return SMN.EmeraldOutburst;
-                    return SMN.EmeraldCatastrophe;
-                }
+                if (level <= SMN.Levels.Ruin2)
+                    return SMN.TopazRuin;
+                if (level <= SMN.Levels.Ruin3)
+                    return SMN.TopazRuin2;
+                if (level <= SMN.Levels.Rites)
+                    return SMN.TopazRuin3;
+                return SMN.TopazRite;
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerRuinUncombo))
+        if (IsEnabled(CustomComboPreset.SummonerGemshineGarudaFeature))
         {
-            if (IsEnabled(CustomComboPreset.SummonerRuinBahamutFeature))
+            if (actionID == BLU.BLU3)
             {
-                if (actionID == BLU.BLU7)
-                {
-                    if (level < SMN.Levels.Ruin2)
-                        return SMN.Ruin;
-                    if (level < SMN.Levels.Ruin3)
-                        return SMN.Ruin2;
-                    return SMN.Ruin3;
-                }
-
-                if (actionID == BLU.BLU8)
-                {
-                    return SMN.AstralImpulse;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerRuinPhoenixFeature))
-            {
-                if (actionID == BLU.BLU7)
-                {
-                    if (level < SMN.Levels.Ruin2)
-                        return SMN.Ruin;
-                    if (level < SMN.Levels.Ruin3)
-                        return SMN.Ruin2;
-                    return SMN.Ruin3;
-                }
-
-                if (actionID == BLU.BLU9)
-                {
-                    return SMN.FountainOfFire;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerRuinSolarBahamutFeature))
-            {
-                if (actionID == BLU.BLU7)
-                {
-                    if (level < SMN.Levels.Ruin2)
-                        return SMN.Ruin;
-                    if (level < SMN.Levels.Ruin3)
-                        return SMN.Ruin2;
-                    return SMN.Ruin3;
-                }
-
-                if (actionID == BLU.BLU10)
-                {
-                    return SMN.UmbralImpulse;
-                }
+                if (level <= SMN.Levels.Ruin2)
+                    return SMN.EmeraldRuin;
+                if (level <= SMN.Levels.Ruin3)
+                    return SMN.EmeraldRuin2;
+                if (level <= SMN.Levels.Rites)
+                    return SMN.EmeraldRuin3;
+                return SMN.EmeraldRite;
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerTriDisasterUncombo))
+        if (IsEnabled(CustomComboPreset.SummonerBrillanceIfritFeature))
         {
-            if (IsEnabled(CustomComboPreset.SummonerTriDisasterBahamutFeature))
+            if (actionID == BLU.BLU4)
             {
-                if (actionID == BLU.BLU11)
-                {
-                    if (level < SMN.Levels.TriDisaster)
-                        return SMN.Outburst;
-                    return SMN.TriDisaster;
-                }
-
-                if (actionID == BLU.BLU12)
-                {
-                    return SMN.AstralFlare;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerTriDisasterPhoenixFeature))
-            {
-                if (actionID == BLU.BLU11)
-                {
-                    if (level < SMN.Levels.TriDisaster)
-                        return SMN.Outburst;
-                    return SMN.TriDisaster;
-                }
-
-                if (actionID == BLU.BLU13)
-                {
-                    return SMN.BrandOfPurgatory;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerTriDisasterSolarBahamutFeature))
-            {
-                if (actionID == BLU.BLU11)
-                {
-                    if (level < SMN.Levels.TriDisaster)
-                        return SMN.Outburst;
-                    return SMN.TriDisaster;
-                }
-
-                if (actionID == BLU.BLU14)
-                {
-                    return SMN.UmbralFlare;
-                }
+                if (level <= SMN.Levels.TriDisaster)
+                    return SMN.RubyOutburst;
+                return SMN.RubyCatastrophe;
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerAstralFlowUncombo))
+        if (IsEnabled(CustomComboPreset.SummonerBrillanceTitanFeature))
         {
-            if (IsEnabled(CustomComboPreset.SummonerIfritFlowFeature))
+            if (actionID == BLU.BLU5)
             {
-                if (actionID == BLU.BLU15)
-                {
-                    return SMN.CrimsonCyclone;
-                }
-
-                if (actionID == BLU.BLU16)
-                {
-                    return SMN.CrimsonStrike;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerTitanFlowFeature))
-            {
-                if (actionID == BLU.BLU17)
-                {
-                    return SMN.MountainBuster;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerGarudaFlowFeature))
-            {
-                if (actionID == BLU.BLU18)
-                {
-                    return SMN.Slipstream;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerBahamutFlowFeature))
-            {
-                if (actionID == BLU.BLU19)
-                {
-                    return SMN.Deathflare;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerPhoenixFlowFeature))
-            {
-                if (actionID == BLU.BLU20)
-                {
-                    return SMN.Rekindle;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerSolarBahamutFlowFeature))
-            {
-                if (actionID == BLU.BLU21)
-                {
-                    return SMN.Sunflare;
-                }
+                if (level <= SMN.Levels.TriDisaster)
+                    return SMN.TopazOutburst;
+                return SMN.TopazCatastrophe;
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerEnkindleUncombo))
+        if (IsEnabled(CustomComboPreset.SummonerBrillanceGarudaFeature))
         {
-            if (IsEnabled(CustomComboPreset.SummoneBahamutEnkindleFeature))
+            if (actionID == BLU.BLU6)
             {
-                if (actionID == BLU.BLU22)
-                {
-                    return SMN.EnkindleBahamut;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerPhoenixEnkindleFeature))
-            {
-                if (actionID == BLU.BLU23)
-                {
-                    return SMN.EnkindlePhoenix;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SummonerSolarBahamutEnkindleFeature))
-            {
-                if (actionID == BLU.BLU24)
-                {
-                    return SMN.EnkindleSolarBahamut;
-                }
+                if (level <= SMN.Levels.TriDisaster)
+                    return SMN.EmeraldOutburst;
+                return SMN.EmeraldCatastrophe;
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerSummoningUncombo))
+        if (IsEnabled(CustomComboPreset.SummonerRuinBahamutFeature))
         {
-            if (IsEnabled(CustomComboPreset.SummonerBahamutSummoningFeature))
+            if (actionID == BLU.BLU7)
             {
-                if (actionID == BLU.BLU25)
-                {
-                    if (level < SMN.Levels.DreadwyrmTrance)
-                        return SMN.Infuse;
-                    if (level < SMN.Levels.SummonBahamut)
-                        return SMN.DreadwyrmTrance;
-                    return SMN.SummonBahamut;
-                }
+                if (level <= SMN.Levels.Ruin2)
+                    return SMN.Ruin;
+                if (level <= SMN.Levels.Ruin3)
+                    return SMN.Ruin2;
+                return SMN.Ruin3;
             }
 
-            if (IsEnabled(CustomComboPreset.SummonerPhoenixSummoningFeature))
+            if (actionID == BLU.BLU8)
             {
-                if (actionID == BLU.BLU26)
-                {
-                    return SMN.SummonPhoenix;
-                }
+                return SMN.AstralImpulse;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerRuinPhoenixFeature))
+        {
+            if (actionID == BLU.BLU7)
+            {
+                if (level <= SMN.Levels.Ruin2)
+                    return SMN.Ruin;
+                if (level <= SMN.Levels.Ruin3)
+                    return SMN.Ruin2;
+                return SMN.Ruin3;
             }
 
-            if (IsEnabled(CustomComboPreset.SummonerSolarBahamutSummoningFeature))
+            if (actionID == BLU.BLU9)
             {
-                if (actionID == BLU.BLU27)
-                {
-                    return SMN.SummonSolarBahamut;
-                }
+                return SMN.FountainOfFire;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerRuinSolarBahamutFeature))
+        {
+            if (actionID == BLU.BLU7)
+            {
+                if (level <= SMN.Levels.Ruin2)
+                    return SMN.Ruin;
+                if (level <= SMN.Levels.Ruin3)
+                    return SMN.Ruin2;
+                return SMN.Ruin3;
+            }
+
+            if (actionID == BLU.BLU10)
+            {
+                return SMN.UmbralImpulse;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerTriDisasterBahamutFeature))
+        {
+            if (actionID == BLU.BLU11)
+            {
+                if (level <= SMN.Levels.TriDisaster)
+                    return SMN.Outburst;
+                return SMN.TriDisaster;
+            }
+
+            if (actionID == BLU.BLU12)
+            {
+                return SMN.AstralFlare;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerTriDisasterPhoenixFeature))
+        {
+            if (actionID == BLU.BLU11)
+            {
+                if (level <= SMN.Levels.TriDisaster)
+                    return SMN.Outburst;
+                return SMN.TriDisaster;
+            }
+
+            if (actionID == BLU.BLU13)
+            {
+                return SMN.BrandOfPurgatory;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerTriDisasterSolarBahamutFeature))
+        {
+            if (actionID == BLU.BLU11)
+            {
+                if (level <= SMN.Levels.TriDisaster)
+                    return SMN.Outburst;
+                return SMN.TriDisaster;
+            }
+
+            if (actionID == BLU.BLU14)
+            {
+                return SMN.UmbralFlare;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerIfritFlowFeature))
+        {
+            if (actionID == BLU.BLU15)
+            {
+                return SMN.CrimsonCyclone;
+            }
+
+            if (actionID == BLU.BLU16)
+            {
+                return SMN.CrimsonStrike;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerTitanFlowFeature))
+        {
+            if (actionID == BLU.BLU17)
+            {
+                return SMN.MountainBuster;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerGarudaFlowFeature))
+        {
+            if (actionID == BLU.BLU18)
+            {
+                return SMN.Slipstream;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerBahamutFlowFeature))
+        {
+            if (actionID == BLU.BLU19)
+            {
+                return SMN.Deathflare;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerPhoenixFlowFeature))
+        {
+            if (actionID == BLU.BLU20)
+            {
+                return SMN.Rekindle;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerSolarBahamutFlowFeature))
+        {
+            if (actionID == BLU.BLU21)
+            {
+                return SMN.Sunflare;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummoneBahamutEnkindleFeature))
+        {
+            if (actionID == BLU.BLU22)
+            {
+                return SMN.EnkindleBahamut;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerPhoenixEnkindleFeature))
+        {
+            if (actionID == BLU.BLU23)
+            {
+                return SMN.EnkindlePhoenix;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerSolarBahamutEnkindleFeature))
+        {
+            if (actionID == BLU.BLU24)
+            {
+                return SMN.EnkindleSolarBahamut;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerBahamutSummoningFeature))
+        {
+            if (actionID == BLU.BLU25)
+            {
+                if (level <= SMN.Levels.DreadwyrmTrance)
+                    return SMN.Infuse;
+                if (level <= SMN.Levels.SummonBahamut)
+                    return SMN.DreadwyrmTrance;
+                return SMN.SummonBahamut;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerPhoenixSummoningFeature))
+        {
+            if (actionID == BLU.BLU26)
+            {
+                return SMN.SummonPhoenix;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SummonerSolarBahamutSummoningFeature))
+        {
+            if (actionID == BLU.BLU27)
+            {
+                return SMN.SummonSolarBahamut;
             }
         }
 

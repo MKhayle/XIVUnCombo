@@ -45,20 +45,6 @@ internal static class MCH
         Excavator = 36981,
         FullMetal = 36982;
 
-    public static class Buffs
-    {
-        public const ushort
-            HyperchargeReady = 3864,
-            ExcavatorReady = 3865,
-            FullMetalPrepared = 3866;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte

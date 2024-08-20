@@ -31,19 +31,6 @@ internal static class WHM
         Glare4 = 37009,
         Medica3 = 37010;
 
-    public static class Buffs
-    {
-        public const ushort
-
-            Glare4Ready = 3879;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte

@@ -34,26 +34,6 @@ internal static class PLD
         Imperator = 36921,
         BladeOfHonor = 36922;
 
-    public static class Buffs
-    {
-        public const ushort
-            FightOrFlight = 76,
-            Requiescat = 1368,
-            SwordOath = 1902,
-            DivineMight = 2673,
-            ConfiteorReady = 3019,
-            SupplicationReady = 3827,
-            SepulchreReady = 3828,
-            GoringBladeReady = 3847,
-            BladeOfHonorReady = 3831;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte
@@ -93,7 +73,7 @@ internal class PaladinUncombo : CustomCombo
         {
             if (actionID == BLU.BLU1)
             {
-                if (level < PLD.Levels.Imperator)
+                if (level <= PLD.Levels.Imperator)
                     return PLD.Requiescat;
                 else return PLD.Imperator;
             }

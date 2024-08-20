@@ -37,26 +37,6 @@ internal static class BRD
         BlastArrow = 25784,
         RadiantFinale = 25785;
 
-    public static class Buffs
-    {
-        public const ushort
-            StraightShotReady = 122,
-            Barrage = 128,
-            WanderersMinuet = 2009,
-            BlastShotReady = 2692,
-            ShadowbiteReady = 3002,
-            HawksEye = 3861;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            VenomousBite = 124,
-            Windbite = 129,
-            CausticBite = 1200,
-            Stormbite = 1201;
-    }
-
     public static class Levels
     {
         public const byte

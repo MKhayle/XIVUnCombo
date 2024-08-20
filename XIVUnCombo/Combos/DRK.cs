@@ -30,20 +30,6 @@ internal static class DRK
         Torcleaver = 36930,
         Impalement = 36931;
 
-    public static class Buffs
-    {
-        public const ushort
-            BloodWeapon = 742,
-            Darkside = 751,
-            Delirium = 1972;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte

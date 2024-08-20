@@ -93,110 +93,101 @@ internal class NinjaUncombo : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (IsEnabled(CustomComboPreset.NinjaNinjutsuUncombo))
+        if (IsEnabled(CustomComboPreset.NinjaFumaShurikenFeature))
         {
-            if (IsEnabled(CustomComboPreset.NinjaFumaShurikenFeature))
+            if (actionID == BLU.BLU1)
             {
-                if (actionID == BLU.BLU1)
-                {
-                    return NIN.FumaShuriken;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.NinjaKatonFeature))
-            {
-                if (actionID == BLU.BLU2)
-                {
-                    return NIN.Katon;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.NinjaRaitonFeature))
-            {
-                if (actionID == BLU.BLU3)
-                {
-                    return NIN.Raiton;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.NinjaHyotonFeature))
-            {
-                if (actionID == BLU.BLU4)
-                {
-                    return NIN.Hyoton;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.NinjaHutonFeature))
-            {
-                if (actionID == BLU.BLU5)
-                {
-                    return NIN.Huton;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.NinjaDotonFeature))
-            {
-                if (actionID == BLU.BLU6)
-                {
-                    return NIN.Doton;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.NinjaSuitonFeature))
-            {
-                if (actionID == BLU.BLU7)
-                {
-                    return NIN.Suiton;
-                }
+                return NIN.FumaShuriken;
             }
         }
 
-        if (IsEnabled(CustomComboPreset.NinjaKassatsuUncombo))
+        if (IsEnabled(CustomComboPreset.NinjaKatonFeature))
         {
-            if (IsEnabled(CustomComboPreset.NinjaGokaMekkyakuFeature))
+            if (actionID == BLU.BLU2)
             {
-                if (actionID == BLU.BLU8)
-                {
-                    return NIN.GokkaMekkyaku;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.NinjaHyoshoRanryuFeature))
-            {
-                if (actionID == BLU.BLU9)
-                {
-                    return NIN.HyoshoRanryu;
-                }
+                return NIN.Katon;
             }
         }
 
-        if (IsEnabled(CustomComboPreset.NinjaNinkiHigiUncombo))
+        if (IsEnabled(CustomComboPreset.NinjaRaitonFeature))
         {
-            if (IsEnabled(CustomComboPreset.NinjaKuchiyoseGamasenFeature))
+            if (actionID == BLU.BLU3)
             {
-                if (actionID == BLU.BLU10)
-                {
-                    return NIN.KuchiyoseOgama;
-                }
+                return NIN.Raiton;
+            }
+        }
 
-                if (actionID == BLU.BLU11)
-                {
-                    return NIN.KuchiyoseGamasen;
-                }
+        if (IsEnabled(CustomComboPreset.NinjaHyotonFeature))
+        {
+            if (actionID == BLU.BLU4)
+            {
+                return NIN.Hyoton;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.NinjaHutonFeature))
+        {
+            if (actionID == BLU.BLU5)
+            {
+                return NIN.Huton;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.NinjaDotonFeature))
+        {
+            if (actionID == BLU.BLU6)
+            {
+                return NIN.Doton;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.NinjaSuitonFeature))
+        {
+            if (actionID == BLU.BLU7)
+            {
+                return NIN.Suiton;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.NinjaGokaMekkyakuFeature))
+        {
+            if (actionID == BLU.BLU8)
+            {
+                return NIN.GokkaMekkyaku;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.NinjaHyoshoRanryuFeature))
+        {
+            if (actionID == BLU.BLU9)
+            {
+                return NIN.HyoshoRanryu;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.NinjaKuchiyoseGamasenFeature))
+        {
+            if (actionID == BLU.BLU10)
+            {
+                return NIN.KuchiyoseOgama;
             }
 
-            if (IsEnabled(CustomComboPreset.NinjaHyoshoRanryuFeature))
+            if (actionID == BLU.BLU11)
             {
-                if (actionID == BLU.BLU12)
-                {
-                    return NIN.Bhavacakra;
-                }
+                return NIN.KuchiyoseGamasen;
+            }
+        }
 
-                if (actionID == BLU.BLU13)
-                {
-                    return NIN.ZeshoMeppo;
-                }
+        if (IsEnabled(CustomComboPreset.NinjaHyoshoRanryuFeature))
+        {
+            if (actionID == BLU.BLU12)
+            {
+                return NIN.Bhavacakra;
+            }
+
+            if (actionID == BLU.BLU13)
+            {
+                return NIN.ZeshoMeppo;
             }
         }
 

@@ -47,23 +47,6 @@ internal static class SAM
         Shoha2 = 25779,
         OgiNamikiri = 25781;
 
-    public static class Buffs
-    {
-        public const ushort
-            MeikyoShisui = 1233,
-            EyesOpen = 1252,
-            Jinpu = 1298,
-            Shifu = 1299,
-            OgiNamikiriReady = 2959,
-            ZanshinReady = 3855;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte
@@ -94,100 +77,85 @@ internal class SamuraiUncombo : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (IsEnabled(CustomComboPreset.SamuraiIaijutsuUncombo))
+        if (IsEnabled(CustomComboPreset.SamuraiHiganbanaFeature))
         {
-            if (IsEnabled(CustomComboPreset.SamuraiHiganbanaFeature))
+            if (actionID == BLU.BLU1)
             {
-                if (actionID == BLU.BLU1)
-                {
-                    return SAM.Higanbana;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SamuraiGokenFeature))
-            {
-                if (actionID == BLU.BLU2)
-                {
-                    return SAM.TenkaGoken;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SamuraiMidareFeature))
-            {
-                if (actionID == BLU.BLU3)
-                {
-                    return SAM.Midare;
-                }
+                return SAM.Higanbana;
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SamuraiTsubameGaeshiUncombo))
+        if (IsEnabled(CustomComboPreset.SamuraiGokenFeature))
         {
-            if (IsEnabled(CustomComboPreset.SamuraiKaeshiGokenFeature))
+            if (actionID == BLU.BLU2)
             {
-                if (actionID == BLU.BLU4)
-                {
-                    return SAM.KaeshiGoken;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SamuraiKaeshiSetsugekkaFeature))
-            {
-                if (actionID == BLU.BLU5)
-                {
-                    return SAM.KaeshiSetsugekka;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.SamuraiKaeshiNamikiriFeature))
-            {
-                if (actionID == BLU.BLU6)
-                {
-                    return SAM.OgiNamikiri;
-                }
-
-                if (actionID == BLU.BLU7)
-                {
-                    return SAM.KaeshiNamikiri;
-                }
+                return SAM.TenkaGoken;
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SamuraiTendoUncombo))
+        if (IsEnabled(CustomComboPreset.SamuraiMidareFeature))
         {
-            if (IsEnabled(CustomComboPreset.SamuraiTendoGokenFeature))
+            if (actionID == BLU.BLU3)
             {
-                if (actionID == BLU.BLU8)
-                {
-                    return SAM.TendoGoken;
-                }
+                return SAM.Midare;
             }
-
-            if (IsEnabled(CustomComboPreset.SamuraiTendoMidareFeature))
+        }
+        if (IsEnabled(CustomComboPreset.SamuraiKaeshiGokenFeature))
+        {
+            if (actionID == BLU.BLU4)
             {
-                if (actionID == BLU.BLU9)
-                {
-                    return SAM.TendoSetsugekka;
-                }
+                return SAM.KaeshiGoken;
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SamuraiTendoKaeshiUncombo))
+        if (IsEnabled(CustomComboPreset.SamuraiKaeshiSetsugekkaFeature))
         {
-            if (IsEnabled(CustomComboPreset.SamuraiTendoKaeshiGokenFeature))
+            if (actionID == BLU.BLU5)
             {
-                if (actionID == BLU.BLU10)
-                {
-                    return SAM.TendoKaeshiGoken;
-                }
+                return SAM.KaeshiSetsugekka;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SamuraiKaeshiNamikiriFeature))
+        {
+            if (actionID == BLU.BLU6)
+            {
+                return SAM.OgiNamikiri;
             }
 
-            if (IsEnabled(CustomComboPreset.SamuraiTendoKaeshiMidareFeature))
+            if (actionID == BLU.BLU7)
             {
-                if (actionID == BLU.BLU11)
-                {
-                    return SAM.TendoKaeshiSetsugekka;
-                }
+                return SAM.KaeshiNamikiri;
+            }
+        }
+        if (IsEnabled(CustomComboPreset.SamuraiTendoGokenFeature))
+        {
+            if (actionID == BLU.BLU8)
+            {
+                return SAM.TendoGoken;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SamuraiTendoMidareFeature))
+        {
+            if (actionID == BLU.BLU9)
+            {
+                return SAM.TendoSetsugekka;
+            }
+        }
+        if (IsEnabled(CustomComboPreset.SamuraiTendoKaeshiGokenFeature))
+        {
+            if (actionID == BLU.BLU10)
+            {
+                return SAM.TendoKaeshiGoken;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.SamuraiTendoKaeshiMidareFeature))
+        {
+            if (actionID == BLU.BLU11)
+            {
+                return SAM.TendoKaeshiSetsugekka;
             }
         }
 

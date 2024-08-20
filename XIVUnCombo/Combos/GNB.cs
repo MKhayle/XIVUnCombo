@@ -32,23 +32,6 @@ internal static class GNB
         NobleBlood = 36938,
         LionHeart = 36939;
 
-    public static class Buffs
-    {
-        public const ushort
-            NoMercy = 1831,
-            ReadyToRip = 1842,
-            ReadyToTear = 1843,
-            ReadyToGouge = 1844,
-            ReadyToBlast = 2686,
-            ReadyToFated = 3839;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            BowShock = 1838;
-    }
-
     public static class Levels
     {
         public const byte

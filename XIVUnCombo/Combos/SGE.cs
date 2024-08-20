@@ -34,18 +34,6 @@ internal static class SGE
         Krasis = 24317,
         Pneuma = 24318;
 
-    public static class Buffs
-    {
-        public const ushort
-            Kardion = 2604;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const ushort

@@ -94,30 +94,30 @@ internal class MonkUncombo : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (IsEnabled(CustomComboPreset.MonkBlitzUncombo))
+        if (IsEnabled(CustomComboPreset.MonkUncombo))
         {
-            if (actionID == BLU.BLU1)
+            if (actionID == BLU.BLU1 && IsEnabled(CustomComboPreset.MonkBlitzElixirUncombo))
             {
-                if (level < MNK.Levels.ElixirBurst)
+                if (level <= MNK.Levels.ElixirBurst)
                     return MNK.ElixirField;
                 else return MNK.ElixirBurst;
             }
 
-            if (actionID == BLU.BLU2)
+            if (actionID == BLU.BLU2 && IsEnabled(CustomComboPreset.MonkBlitzCelestialUncombo))
             {
                 return MNK.CelestialRevolution;
             }
 
-            if (actionID == BLU.BLU3)
+            if (actionID == BLU.BLU3 && IsEnabled(CustomComboPreset.MonkBlitzFlintUncombo))
             {
-                if (level < MNK.Levels.RisingPhoenix)
+                if (level <= MNK.Levels.RisingPhoenix)
                     return MNK.FlintStrike;
                 else return MNK.RisingPhoenix;
             }
 
-            if (actionID == BLU.BLU4)
+            if (actionID == BLU.BLU4 && IsEnabled(CustomComboPreset.MonkBlitzTornadoUncombo))
             {
-                if (level < MNK.Levels.PhantomRush)
+                if (level <= MNK.Levels.PhantomRush)
                     return MNK.TornadoKick;
                 else return MNK.PhantomRush;
             }

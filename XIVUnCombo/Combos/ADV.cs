@@ -11,18 +11,6 @@ internal static class ADV
         AngelWhisper = 18317,
         VariantRaise2 = 29734;
 
-    public static class Buffs
-    {
-        public const ushort
-            Medicated = 49;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte

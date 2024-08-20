@@ -47,26 +47,6 @@ internal static class RDM
         GrandImpact = 37006,
         Prefulgence = 37007;
 
-    public static class Buffs
-    {
-        public const ushort
-            Swiftcast = 167,
-            VerfireReady = 1234,
-            VerstoneReady = 1235,
-            Acceleration = 1238,
-            Dualcast = 1249,
-            LostChainspell = 2560,
-            ThornedFlourish = 3876,
-            GrandImpactReady = 3877,
-            PrefulgenceReady = 3878;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte
@@ -104,146 +84,142 @@ internal class RedMageUncombo : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (IsEnabled(CustomComboPreset.RedMageEnchantedUncombo))
+        if (IsEnabled(CustomComboPreset.RedMageNonEnchantedSTFeature))
         {
-            if (IsEnabled(CustomComboPreset.RedMageEnchantedSTFeature))
+            if (actionID == BLU.BLU1)
             {
-                if (actionID == BLU.BLU1)
-                {
-                    return RDM.Riposte;
-                }
-
-                if (actionID == BLU.BLU2)
-                {
-                    return RDM.Zwerchhau;
-                }
-
-                if (actionID == BLU.BLU3)
-                {
-                    return RDM.Redoublement;
-                }
-
-                if (actionID == BLU.BLU4)
-                {
-                    return RDM.EnchantedRiposte;
-                }
-
-                if (actionID == BLU.BLU5)
-                {
-                    return RDM.EnchantedZwerchhau;
-                }
-
-                if (actionID == BLU.BLU6)
-                {
-                    return RDM.EnchantedRedoublement;
-                }
+                return RDM.Riposte;
             }
 
-            if (IsEnabled(CustomComboPreset.RedMageEnchantedAoEFeature))
+            if (actionID == BLU.BLU2)
             {
-                if (actionID == BLU.BLU7)
-                {
-                    return RDM.Moulinet;
-                }
-
-                if (actionID == BLU.BLU8)
-                {
-                    return RDM.EnchantedMoulinet;
-                }
-
-                if (actionID == BLU.BLU9)
-                {
-                    return RDM.EnchantedMoulinetDeux;
-                }
-
-                if (actionID == BLU.BLU10)
-                {
-                    return RDM.EnchantedMoulinetTrois;
-                }
+                return RDM.Zwerchhau;
             }
 
-            if (IsEnabled(CustomComboPreset.RedMageEnchantedRangedFeature))
+            if (actionID == BLU.BLU3)
             {
-                if (actionID == BLU.BLU11)
-                {
-                    return RDM.Reprise;
-                }
-
-                if (actionID == BLU.BLU12)
-                {
-                    return RDM.EnchantedReprise;
-                }
+                return RDM.Redoublement;
             }
         }
 
-        if (IsEnabled(CustomComboPreset.RedMageFinishersUncombo))
+        if (IsEnabled(CustomComboPreset.RedMageEnchantedSTFeature))
         {
-            if (IsEnabled(CustomComboPreset.RedMageVerFlareFeature))
+            if (actionID == BLU.BLU4)
             {
-                if (actionID == BLU.BLU13)
-                {
-                    if (level < RDM.Levels.Verthunder3)
-                        return RDM.Verthunder;
-                    else return RDM.Verthunder3;
-                }
-
-                if (actionID == BLU.BLU14)
-                {
-                    return RDM.Verthunder2;
-                }
-
-                if (actionID == BLU.BLU15)
-                {
-                    return RDM.Verflare;
-                }
+                return RDM.EnchantedRiposte;
             }
 
-            if (IsEnabled(CustomComboPreset.RedMageVerHolyFeature))
+            if (actionID == BLU.BLU5)
             {
-                if (actionID == BLU.BLU16)
-                {
-                    if (level < RDM.Levels.Veraero3)
-                        return RDM.Veraero;
-                    else return RDM.Veraero3;
-                }
-
-                if (actionID == BLU.BLU17)
-                {
-                    return RDM.Veraero2;
-                }
-
-                if (actionID == BLU.BLU18)
-                {
-                    return RDM.Verholy;
-                }
+                return RDM.EnchantedZwerchhau;
             }
 
-            if (IsEnabled(CustomComboPreset.RedMageScorchFeature))
+            if (actionID == BLU.BLU6)
             {
-                if (actionID == BLU.BLU19)
-                {
-                    if (level < RDM.Levels.Jolt3)
-                        return RDM.Jolt2;
-                    else return RDM.Jolt3;
-                }
+                return RDM.EnchantedRedoublement;
+            }
+        }
 
-                if (actionID == BLU.BLU20)
-                {
-                    return RDM.Impact;
-                }
-
-                if (actionID == BLU.BLU21)
-                {
-                    return RDM.Scorch;
-                }
+        if (IsEnabled(CustomComboPreset.RedMageEnchantedAoEFeature))
+        {
+            if (actionID == BLU.BLU7)
+            {
+                return RDM.Moulinet;
             }
 
-            if (IsEnabled(CustomComboPreset.RedMageResolutionFeature))
+            if (actionID == BLU.BLU8)
             {
-                if (actionID == BLU.BLU22)
-                {
-                    return RDM.Resolution;
-                }
+                return RDM.EnchantedMoulinet;
+            }
+
+            if (actionID == BLU.BLU9)
+            {
+                return RDM.EnchantedMoulinetDeux;
+            }
+
+            if (actionID == BLU.BLU10)
+            {
+                return RDM.EnchantedMoulinetTrois;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.RedMageEnchantedRangedFeature))
+        {
+            if (actionID == BLU.BLU11)
+            {
+                return RDM.Reprise;
+            }
+
+            if (actionID == BLU.BLU12)
+            {
+                return RDM.EnchantedReprise;
+            }
+        }
+        if (IsEnabled(CustomComboPreset.RedMageVerFlareFeature))
+        {
+            if (actionID == BLU.BLU13)
+            {
+                if (level <= RDM.Levels.Verthunder3)
+                    return RDM.Verthunder;
+                else return RDM.Verthunder3;
+            }
+
+            if (actionID == BLU.BLU14)
+            {
+                return RDM.Verthunder2;
+            }
+
+            if (actionID == BLU.BLU15)
+            {
+                return RDM.Verflare;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.RedMageVerHolyFeature))
+        {
+            if (actionID == BLU.BLU16)
+            {
+                if (level <= RDM.Levels.Veraero3)
+                    return RDM.Veraero;
+                else return RDM.Veraero3;
+            }
+
+            if (actionID == BLU.BLU17)
+            {
+                return RDM.Veraero2;
+            }
+
+            if (actionID == BLU.BLU18)
+            {
+                return RDM.Verholy;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.RedMageScorchFeature))
+        {
+            if (actionID == BLU.BLU19)
+            {
+                if (level <= RDM.Levels.Jolt3)
+                    return RDM.Jolt2;
+                else return RDM.Jolt3;
+            }
+
+            if (actionID == BLU.BLU20)
+            {
+                return RDM.Impact;
+            }
+
+            if (actionID == BLU.BLU21)
+            {
+                return RDM.Scorch;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.RedMageResolutionFeature))
+        {
+            if (actionID == BLU.BLU22)
+            {
+                return RDM.Resolution;
             }
         }
 
@@ -251,7 +227,7 @@ internal class RedMageUncombo : CustomCombo
         {
             if (actionID == BLU.BLU19)
             {
-                if (level < RDM.Levels.Jolt3)
+                if (level <= RDM.Levels.Jolt3)
                     return RDM.Jolt2;
                 else return RDM.Jolt3;
             }
@@ -261,6 +237,7 @@ internal class RedMageUncombo : CustomCombo
                 return RDM.GrandImpact;
             }
         }
+
 
         if (IsEnabled(CustomComboPreset.RedMagePrefulgenceUncombo))
         {

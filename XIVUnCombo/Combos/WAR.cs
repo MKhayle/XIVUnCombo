@@ -34,24 +34,6 @@ internal static class WAR
         PrimalWrath = 36924,
         PrimalRuination = 36925;
 
-    public static class Buffs
-    {
-        public const ushort
-            Berserk = 86,
-            InnerRelease = 1177,
-            NascentChaos = 1897,
-            PrimalRendReady = 2624,
-            SurgingTempest = 2677,
-            Wrathful = 3901,
-            PrimalRuinationReady = 3834;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte

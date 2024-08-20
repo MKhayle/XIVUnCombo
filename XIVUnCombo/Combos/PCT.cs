@@ -56,27 +56,6 @@ internal static class PCT
         WeaponMotif2 = 35348,
         LandscapeMotif2 = 35349;
 
-    public static class Buffs
-    {
-        public const ushort
-            SubstractivePalette = 3674,
-            Chroma2Ready = 3675,
-            Chroma3Ready = 3676,
-            RainbowReady = 3679,
-            HammerReady = 3680,
-            StarPrismReady = 3681,
-            Installation = 3688,
-            ArtisticInstallation = 3689,
-            SubstractivePaletteReady = 3690,
-            InvertedColors = 3691;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte

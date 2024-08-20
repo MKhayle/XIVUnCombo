@@ -52,27 +52,6 @@ internal static class RPR
         ExecutionerGuillotine = 36972,
         Perfectio = 36973;
 
-    public static class Buffs
-    {
-        public const ushort
-            EnhancedHarpe = 2845,
-            SoulReaver = 2587,
-            EnhancedGibbet = 2588,
-            EnhancedGallows = 2589,
-            EnhancedVoidReaping = 2590,
-            EnhancedCrossReaping = 2591,
-            ImmortalSacrifice = 2592,
-            Enshrouded = 2593,
-            Soulsow = 2594,
-            Threshold = 2595;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte
@@ -141,7 +120,7 @@ internal class ReaperUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.ReaperReapingUncombo))
+        if (IsEnabled(CustomComboPreset.ReaperVoidReapingUncombo))
         {
             if (actionID == BLU.BLU7)
             {
@@ -150,22 +129,30 @@ internal class ReaperUncombo : CustomCombo
 
             if (actionID == BLU.BLU8)
             {
-                return RPR.Gallows;
+                return RPR.VoidReaping;
             }
+        }
+
+        if (IsEnabled(CustomComboPreset.ReaperCrossReapingUncombo))
+        {
 
             if (actionID == BLU.BLU9)
             {
-                return RPR.Guillotine;
+                return RPR.Gallows;
             }
 
             if (actionID == BLU.BLU10)
             {
-                return RPR.VoidReaping;
+                return RPR.CrossReaping;
             }
+        }
+
+        if (IsEnabled(CustomComboPreset.ReaperGrimReapingUncombo))
+        {
 
             if (actionID == BLU.BLU11)
             {
-                return RPR.CrossReaping;
+                return RPR.Guillotine;
             }
 
             if (actionID == BLU.BLU12)
@@ -223,31 +210,39 @@ internal class ReaperUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.ReaperExecutionerUncombo))
+        if (IsEnabled(CustomComboPreset.ReaperExecutionerGibbetUncombo))
         {
             if (actionID == BLU.BLU7)
             {
                 return RPR.Gibbet;
             }
 
+            if (actionID == BLU.BLU20)
+            {
+                return RPR.ExecutionerGibet;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.ReaperExecutionerGallowsUncombo))
+        {
+
             if (actionID == BLU.BLU8)
             {
                 return RPR.Gallows;
             }
 
-            if (actionID == BLU.BLU9)
-            {
-                return RPR.Guillotine;
-            }
-
-            if (actionID == BLU.BLU20)
-            {
-                return RPR.ExecutionerGibet;
-            }
-
             if (actionID == BLU.BLU21)
             {
                 return RPR.ExecutionerGallows;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.ReaperExecutionerGuillotineUncombo))
+        {
+
+            if (actionID == BLU.BLU9)
+            {
+                return RPR.Guillotine;
             }
 
             if (actionID == BLU.BLU22)

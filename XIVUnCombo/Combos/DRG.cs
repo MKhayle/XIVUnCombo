@@ -46,21 +46,6 @@ internal static class DRG
         DragonSight = 7398,
         BattleLitany = 3557;
 
-    public static class Buffs
-    {
-        public const ushort
-            SharperFangAndClaw = 802,
-            EnhancedWheelingThrust = 803,
-            DiveReady = 1243,
-            DraconianFire = 1863;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte

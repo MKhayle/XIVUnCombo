@@ -48,17 +48,6 @@ internal static class AST
         AstralDraw = 37017,
         UmbralDraw = 37018;
 
-    public static class Buffs
-    {
-        public const ushort
-            ClarifyingDraw = 2713;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
 
     public static class Levels
     {
@@ -79,73 +68,67 @@ internal class AstrologianUncombo : CustomCombo
 
     protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
     {
-        if (IsEnabled(CustomComboPreset.AstrologianCardsUncombo))
+        if (IsEnabled(CustomComboPreset.AstrologianBalanceFeature))
         {
-            if (IsEnabled(CustomComboPreset.AstrologianBalanceFeature))
+            if (actionID == BLU.BLU1)
             {
-                if (actionID == BLU.BLU1)
-                {
-                    return AST.Balance;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.AstrologianArrowFeature))
-            {
-                if (actionID == BLU.BLU2)
-                {
-                    return AST.Arrow;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.AstrologianSpireFeature))
-            {
-                if (actionID == BLU.BLU3)
-                {
-                    return AST.Spire;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.AstrologianSpearFeature))
-            {
-                if (actionID == BLU.BLU4)
-                {
-                    return AST.Spear;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.AstrologianBoleFeature))
-            {
-                if (actionID == BLU.BLU5)
-                {
-                    return AST.Bole;
-                }
-            }
-
-            if (IsEnabled(CustomComboPreset.AstrologianEwerFeature))
-            {
-                if (actionID == BLU.BLU6)
-                {
-                    return AST.Ewer;
-                }
+                return AST.Balance;
             }
         }
 
-        if (IsEnabled(CustomComboPreset.AstrologianMinorArcanaUncombo))
+        if (IsEnabled(CustomComboPreset.AstrologianArrowFeature))
         {
-            if (IsEnabled(CustomComboPreset.AstrologianLordOfCrownsFeature))
+            if (actionID == BLU.BLU2)
             {
-                if (actionID == BLU.BLU7)
-                {
-                    return AST.LordOfCrowns;
-                }
+                return AST.Arrow;
             }
+        }
 
-            if (IsEnabled(CustomComboPreset.AstrologianLadyOfCrownsFeature))
+        if (IsEnabled(CustomComboPreset.AstrologianSpireFeature))
+        {
+            if (actionID == BLU.BLU3)
             {
-                if (actionID == BLU.BLU8)
-                {
-                    return AST.LadyOfCrowns;
-                }
+                return AST.Spire;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.AstrologianSpearFeature))
+        {
+            if (actionID == BLU.BLU4)
+            {
+                return AST.Spear;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.AstrologianBoleFeature))
+        {
+            if (actionID == BLU.BLU5)
+            {
+                return AST.Bole;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.AstrologianEwerFeature))
+        {
+            if (actionID == BLU.BLU6)
+            {
+                return AST.Ewer;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.AstrologianLordOfCrownsFeature))
+        {
+            if (actionID == BLU.BLU7)
+            {
+                return AST.LordOfCrowns;
+            }
+        }
+
+        if (IsEnabled(CustomComboPreset.AstrologianLadyOfCrownsFeature))
+        {
+            if (actionID == BLU.BLU8)
+            {
+                return AST.LadyOfCrowns;
             }
         }
 

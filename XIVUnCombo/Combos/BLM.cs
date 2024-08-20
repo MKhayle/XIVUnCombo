@@ -33,25 +33,6 @@ internal static class BLM
         HighBlizzard2 = 25795,
         Paradox = 25797;
 
-    public static class Buffs
-    {
-        public const ushort
-            Thundercloud = 164,
-            Firestarter = 165,
-            Swiftcast = 167,
-            LeyLines = 737,
-            Sharpcast = 867,
-            Triplecast = 1211,
-            EnhancedFlare = 2960;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Thunder = 161,
-            Thunder3 = 163;
-    }
-
     public static class Levels
     {
         public const byte
@@ -71,13 +52,6 @@ internal static class BLM
             HighBlizzard2 = 82,
             EnhancedSharpcast2 = 88,
             Paradox = 90;
-    }
-
-    public static class MpCosts
-    {
-        public const ushort
-            Fire2 = 3000,
-            Flare = 800;
     }
 }
 

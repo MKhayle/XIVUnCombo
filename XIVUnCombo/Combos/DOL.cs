@@ -24,18 +24,6 @@ internal static class DOL
         ElectricCurrent = 26872,
         PrizeCatch = 26806;
 
-    public static class Buffs
-    {
-        public const ushort
-            EurekaMoment = 2765;
-    }
-
-    public static class Debuffs
-    {
-        public const ushort
-            Placeholder = 0;
-    }
-
     public static class Levels
     {
         public const byte
