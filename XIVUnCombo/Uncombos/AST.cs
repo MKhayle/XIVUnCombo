@@ -1,9 +1,4 @@
-using System.Collections.Generic;
-
-using Dalamud.Game.ClientState.JobGauge.Enums;
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class AST
 {
@@ -62,13 +57,13 @@ internal static class AST
     }
 }
 
-internal class AstrologianUncombo : CustomCombo
+internal class AstrologianUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.AstrologianUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.AstrologianUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.AstrologianBalanceFeature))
+        if (IsEnabled(CustomUncomboPreset.AstrologianBalanceFeature))
         {
             if (actionID == BLU.BLU1)
             {
@@ -76,7 +71,7 @@ internal class AstrologianUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.AstrologianArrowFeature))
+        if (IsEnabled(CustomUncomboPreset.AstrologianArrowFeature))
         {
             if (actionID == BLU.BLU2)
             {
@@ -84,7 +79,7 @@ internal class AstrologianUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.AstrologianSpireFeature))
+        if (IsEnabled(CustomUncomboPreset.AstrologianSpireFeature))
         {
             if (actionID == BLU.BLU3)
             {
@@ -92,7 +87,7 @@ internal class AstrologianUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.AstrologianSpearFeature))
+        if (IsEnabled(CustomUncomboPreset.AstrologianSpearFeature))
         {
             if (actionID == BLU.BLU4)
             {
@@ -100,7 +95,7 @@ internal class AstrologianUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.AstrologianBoleFeature))
+        if (IsEnabled(CustomUncomboPreset.AstrologianBoleFeature))
         {
             if (actionID == BLU.BLU5)
             {
@@ -108,7 +103,7 @@ internal class AstrologianUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.AstrologianEwerFeature))
+        if (IsEnabled(CustomUncomboPreset.AstrologianEwerFeature))
         {
             if (actionID == BLU.BLU6)
             {
@@ -116,7 +111,7 @@ internal class AstrologianUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.AstrologianLordOfCrownsFeature))
+        if (IsEnabled(CustomUncomboPreset.AstrologianLordOfCrownsFeature))
         {
             if (actionID == BLU.BLU7)
             {
@@ -124,7 +119,7 @@ internal class AstrologianUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.AstrologianLadyOfCrownsFeature))
+        if (IsEnabled(CustomUncomboPreset.AstrologianLadyOfCrownsFeature))
         {
             if (actionID == BLU.BLU8)
             {
@@ -132,7 +127,7 @@ internal class AstrologianUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.AstrologianUmbralDrawUncombo))
+        if (IsEnabled(CustomUncomboPreset.AstrologianUmbralDrawUncombo))
         {
             if (actionID == BLU.BLU9)
             {

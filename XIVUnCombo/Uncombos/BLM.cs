@@ -1,6 +1,4 @@
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class BLM
 {
@@ -55,13 +53,13 @@ internal static class BLM
     }
 }
 
-internal class BlackMageUncombo : CustomCombo
+internal class BlackMageUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.BlackMageUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.BlackMageUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.BlackMageParadoxUncombo))
+        if (IsEnabled(CustomUncomboPreset.BlackMageParadoxUncombo))
         {
             if (actionID == BLU.BLU1)
             {

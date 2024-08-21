@@ -1,6 +1,4 @@
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class WHM
 {

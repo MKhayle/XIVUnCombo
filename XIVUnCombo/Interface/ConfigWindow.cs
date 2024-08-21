@@ -12,8 +12,7 @@ using Dalamud.Interface.Windowing;
 using Dalamud.Utility;
 using ImGuiNET;
 using XIVUncombo.Attributes;
-using XIVUncombo.Combos;
-
+using XIVUncombo.Uncombos;
 using Action = Lumina.Excel.GeneratedSheets.Action;
 using Language = Lumina.Data.Language;
 
@@ -24,8 +23,8 @@ namespace XIVUncombo.Interface;
 /// </summary>
 public class ConfigWindow : Window
 {
-    private readonly Dictionary<string, List<(CustomComboPreset Preset, CustomComboInfoAttribute Info)>> groupedPresets;
-    private readonly Dictionary<CustomComboPreset, (CustomComboPreset Preset, CustomComboInfoAttribute Info)[]> presetChildren;
+    private readonly Dictionary<string, List<(CustomUncomboPreset Preset, CustomUncomboInfoAttribute Info)>> groupedPresets;
+    private readonly Dictionary<CustomUncomboPreset, (CustomUncomboPreset Preset, CustomUncomboInfoAttribute Info)[]> presetChildren;
     private readonly Vector4 shadedColor = new(0.68f, 0.68f, 0.68f, 1.0f);
     private XIVUncombo Plugin;
 
@@ -39,11 +38,11 @@ public class ConfigWindow : Window
         this.RespectCloseHotkey = true;
 
         this.groupedPresets = Enum
-            .GetValues<CustomComboPreset>()
-            .Where(preset => (int)preset > 100 && preset != CustomComboPreset.Disabled)
-            .Select(preset => (Preset: preset, Info: preset.GetAttribute<CustomComboInfoAttribute>()))
+            .GetValues<CustomUncomboPreset>()
+            .Where(preset => (int)preset > 100 && preset != CustomUncomboPreset.Disabled)
+            .Select(preset => (Preset: preset, Info: preset.GetAttribute<CustomUncomboInfoAttribute>()))
             .Where(tpl => tpl.Info != null && Service.Configuration.GetParent(tpl.Preset) == null)
-            .OrderBy(tpl => CustomComboInfoAttribute.RoleIDToOrder(tpl.Info.RoleName))
+            .OrderBy(tpl => CustomUncomboInfoAttribute.RoleIDToOrder(tpl.Info.RoleName))
             .ThenBy(tpl => tpl.Info.JobID)
             .ThenBy(tpl => tpl.Info.Order)
             .GroupBy(tpl => tpl.Info.JobName)
@@ -51,13 +50,13 @@ public class ConfigWindow : Window
                 tpl => tpl.Key,
                 tpl => tpl.ToList());
 
-        var childCombos = Enum.GetValues<CustomComboPreset>().ToDictionary(
+        var childCombos = Enum.GetValues<CustomUncomboPreset>().ToDictionary(
             tpl => tpl,
-            tpl => new List<CustomComboPreset>());
+            tpl => new List<CustomUncomboPreset>());
 
-        foreach (var preset in Enum.GetValues<CustomComboPreset>())
+        foreach (var preset in Enum.GetValues<CustomUncomboPreset>())
         {
-            var parent = preset.GetAttribute<ParentComboAttribute>()?.ParentPreset;
+            var parent = preset.GetAttribute<ParentUncomboAttribute>()?.ParentPreset;
             if (parent != null)
                 childCombos[parent.Value].Add(preset);
         }
@@ -65,7 +64,7 @@ public class ConfigWindow : Window
         this.presetChildren = childCombos.ToDictionary(
             kvp => kvp.Key,
             kvp => kvp.Value
-                .Select(preset => (Preset: preset, Info: preset.GetAttribute<CustomComboInfoAttribute>()))
+                .Select(preset => (Preset: preset, Info: preset.GetAttribute<CustomUncomboInfoAttribute>()))
                 .OrderBy(tpl => tpl.Info.Order).ToArray());
 
         this.SizeCondition = ImGuiCond.FirstUseEver;
@@ -143,7 +142,7 @@ public class ConfigWindow : Window
                                             {
                                                 ImGui.TableNextRow();
                                                 ImGui.TableNextColumn();
-                                                ImGui.PushID($"EditorTab{CustomComboInfoAttribute.NameToJobID(jobName)}");
+                                                ImGui.PushID($"EditorTab{CustomUncomboInfoAttribute.NameToJobID(jobName)}");
                                                 bool selected = Service.Configuration.CurrentJobTab == jobName ? true : false;
 
                                                 using (selected ? ImRaii.PushColor(ImGuiCol.Button, ImGuiColors.DalamudGrey2) : ImRaii.PushColor(ImGuiCol.Button, 0))
@@ -151,7 +150,7 @@ public class ConfigWindow : Window
                                                 using (ImRaii.PushStyle(ImGuiStyleVar.FramePadding, new System.Numerics.Vector2(4f, 3f)))
                                                 using (ImRaii.PushStyle(ImGuiStyleVar.FrameBorderSize, 0))
                                                 {
-                                                    ISharedImmediateTexture image = GetJobIcon(CustomComboInfoAttribute.NameToJobID(jobName));
+                                                    ISharedImmediateTexture image = GetJobIcon(CustomUncomboInfoAttribute.NameToJobID(jobName));
 
                                                     if (image != null)
                                                     {
@@ -188,14 +187,14 @@ public class ConfigWindow : Window
                             if (ImGui.BeginChild("TabContent", new Vector2(0, -1), true, ImGuiWindowFlags.NoBackground))
                             {
                                 #region COMBOS TAB HEADER
-                                var jobID = CustomComboInfoAttribute.NameToJobID(Service.Configuration.CurrentJobTab);
+                                var jobID = CustomUncomboInfoAttribute.NameToJobID(Service.Configuration.CurrentJobTab);
                                 var image = GetJobIcon(jobID);
                                 ImGui.Image(image.GetWrapOrEmpty().ImGuiHandle, new System.Numerics.Vector2(36f, 36f));
                                 ImGui.SameLine();
                                 using (ImRaii.PushFont(UiBuilder.MonoFont))
                                 using (ImRaii.PushColor(ImGuiCol.Text, ImGuiColors.ParsedGold))
                                 {
-                                    ImGui.Text($" " + Service.Configuration.CurrentJobTab + "\n " + (CustomComboInfoAttribute.JobIDToRole(jobID) != "Adventurer" ? CustomComboInfoAttribute.JobIDToRole(jobID) : "Warrior of Light"));
+                                    ImGui.Text($" " + Service.Configuration.CurrentJobTab + "\n " + (CustomUncomboInfoAttribute.JobIDToRole(jobID) != "Adventurer" ? CustomUncomboInfoAttribute.JobIDToRole(jobID) : "Warrior of Light"));
                                 }
 
                                 ImGui.Separator();
@@ -349,14 +348,14 @@ public class ConfigWindow : Window
     }
 
 
-    private void DrawPreset(CustomComboPreset preset, CustomComboInfoAttribute info, ref int i)
+    private void DrawPreset(CustomUncomboPreset preset, CustomUncomboInfoAttribute info, ref int i)
     {
         var enabled = Service.Configuration.IsEnabled(preset);
         var parent = Service.Configuration.GetParent(preset);
         uint[] icons = [];
 
-        if (preset.GetAttribute<IconsComboAttribute>()?.Icons.Length > 0)
-            icons = preset.GetAttribute<IconsComboAttribute>().Icons;
+        if (preset.GetAttribute<IconsUncomboAttribute>()?.Icons.Length > 0)
+            icons = preset.GetAttribute<IconsUncomboAttribute>().Icons;
 
 
         ImGui.PushItemWidth(200);
@@ -365,7 +364,6 @@ public class ConfigWindow : Window
         {
             if (enabled)
             {
-                this.EnableParentPresets(preset);
                 var children = this.presetChildren[preset];
                 if (children.Length > 0)
                 {
@@ -417,7 +415,7 @@ public class ConfigWindow : Window
 
                 if (isUTL)
                 {
-                    ImGui.Image(GetIcon(IconsComboAttribute.Blank).GetWrapOrEmpty().ImGuiHandle, new System.Numerics.Vector2(2f * scale, 24f * scale));
+                    ImGui.Image(GetIcon(IconsUncomboAttribute.Blank).GetWrapOrEmpty().ImGuiHandle, new System.Numerics.Vector2(2f * scale, 24f * scale));
                     ImGui.SameLine(0, 0);
                     ImGui.SetCursorPosY(ImGui.GetCursorPosY() + 3f);
                     ImGui.Image(icon.GetWrapOrEmpty().ImGuiHandle, new System.Numerics.Vector2(20f * scale, 20f * scale));
@@ -442,7 +440,7 @@ public class ConfigWindow : Window
                 if (isUTL)
                 {
                     ImGui.SameLine(0, 0);
-                    ImGui.Image(GetIcon(IconsComboAttribute.Blank).GetWrapOrEmpty().ImGuiHandle, new System.Numerics.Vector2(2f * scale, 24f * scale));
+                    ImGui.Image(GetIcon(IconsUncomboAttribute.Blank).GetWrapOrEmpty().ImGuiHandle, new System.Numerics.Vector2(2f * scale, 24f * scale));
                 }
 
                 it++;
@@ -473,26 +471,6 @@ public class ConfigWindow : Window
                 foreach (var (childPreset, childInfo) in children)
                     this.DrawPreset(childPreset, childInfo, ref i);
             }
-        }
-    }
-
-    /// <summary>
-    /// Iterates up a preset's parent tree, enabling each of them.
-    /// </summary>
-    /// <param name="preset">Combo preset to enabled.</param>
-    private void EnableParentPresets(CustomComboPreset preset)
-    {
-        var parentMaybe = Service.Configuration.GetParent(preset);
-        while (parentMaybe != null)
-        {
-            var parent = parentMaybe.Value;
-
-            if (!Service.Configuration.EnabledActions.Contains(parent))
-            {
-                Service.Configuration.EnabledActions.Add(parent);
-            }
-
-            parentMaybe = Service.Configuration.GetParent(parent);
         }
     }
 

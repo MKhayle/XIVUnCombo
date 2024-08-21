@@ -6,13 +6,13 @@ namespace XIVUncombo.Attributes;
 /// Attribute documenting required combo relationships.
 /// </summary>
 [AttributeUsage(AttributeTargets.Field)]
-internal class ParentComboAttribute : Attribute
+internal class ParentUncomboAttribute : Attribute
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="ParentComboAttribute"/> class.
+    /// Initializes a new instance of the <see cref="ParentUncomboAttribute"/> class.
     /// </summary>
     /// <param name="parentPreset">Presets that depend on the given combo.</param>
-    internal ParentComboAttribute(CustomComboPreset parentPreset)
+    internal ParentUncomboAttribute(CustomUncomboPreset parentPreset)
     {
         this.ParentPreset = parentPreset;
     }
@@ -20,5 +20,5 @@ internal class ParentComboAttribute : Attribute
     /// <summary>
     /// Gets the display name.
     /// </summary>
-    public CustomComboPreset ParentPreset { get; }
+    public CustomUncomboPreset ParentPreset { get; }
 }

@@ -1,6 +1,4 @@
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class DRK
 {
@@ -52,13 +50,13 @@ internal static class DRK
     }
 }
 
-internal class DarKKnightUncombo : CustomCombo
+internal class DarKKnightUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.DarkKnightUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.DarkKnightUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.DarkKnightDeliriumSTUncombo))
+        if (IsEnabled(CustomUncomboPreset.DarkKnightDeliriumSTUncombo))
         {
             if (actionID == BLU.BLU1)
             {
@@ -81,7 +79,7 @@ internal class DarKKnightUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.DarkKnightDeliriumAoEUncombo))
+        if (IsEnabled(CustomUncomboPreset.DarkKnightDeliriumAoEUncombo))
         {
             if (actionID == BLU.BLU5)
             {

@@ -15,7 +15,7 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1127:Generic type constraints should be on their own line", Justification = "I like this better", Scope = "module")]
 [assembly: SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1633:File should have header", Justification = "We don't do those yet")]
 
-[assembly: SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1602:Enumeration items should be documented", Justification = "Self explanatory.", Scope = "type", Target = "~T:XIVUncombo.CustomComboPreset")]
-[assembly: SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:Elements should be documented", Justification = "Self explanatory.", Scope = "namespaceanddescendants", Target = "~N:XIVUncombo.Combos")]
-[assembly: SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:File may only contain a single type", Justification = "Group jobs together.", Scope = "namespaceanddescendants", Target = "~N:XIVUncombo.Combos")]
-[assembly: SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1132:Do not combine fields", Justification = "Not necessary.", Scope = "namespaceanddescendants", Target = "~N:XIVUncombo.Combos")]
+[assembly: SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1602:Enumeration items should be documented", Justification = "Self explanatory.", Scope = "type", Target = "~T:XIVUncombo.CustomUncomboPreset")]
+[assembly: SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1600:Elements should be documented", Justification = "Self explanatory.", Scope = "namespaceanddescendants", Target = "~N:XIVUncombo.Uncombos")]
+[assembly: SuppressMessage("StyleCop.CSharp.MaintainabilityRules", "SA1402:File may only contain a single type", Justification = "Group jobs together.", Scope = "namespaceanddescendants", Target = "~N:XIVUncombo.Uncombos")]
+[assembly: SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1132:Do not combine fields", Justification = "Not necessary.", Scope = "namespaceanddescendants", Target = "~N:XIVUncombo.Uncombos")]

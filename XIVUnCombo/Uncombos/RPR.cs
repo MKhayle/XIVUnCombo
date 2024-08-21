@@ -1,6 +1,4 @@
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class RPR
 {
@@ -78,13 +76,13 @@ internal static class RPR
     }
 }
 
-internal class ReaperUncombo : CustomCombo
+internal class ReaperUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.ReaperUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.ReaperUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.ReaperUnveiledUncombo))
+        if (IsEnabled(CustomUncomboPreset.ReaperUnveiledUncombo))
         {
             if (actionID == BLU.BLU1)
             {
@@ -102,7 +100,7 @@ internal class ReaperUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.ReaperRegressUncombo))
+        if (IsEnabled(CustomUncomboPreset.ReaperRegressUncombo))
         {
             if (actionID == BLU.BLU4)
             {
@@ -120,7 +118,7 @@ internal class ReaperUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.ReaperVoidReapingUncombo))
+        if (IsEnabled(CustomUncomboPreset.ReaperVoidReapingUncombo))
         {
             if (actionID == BLU.BLU7)
             {
@@ -133,7 +131,7 @@ internal class ReaperUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.ReaperCrossReapingUncombo))
+        if (IsEnabled(CustomUncomboPreset.ReaperCrossReapingUncombo))
         {
 
             if (actionID == BLU.BLU9)
@@ -147,7 +145,7 @@ internal class ReaperUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.ReaperGrimReapingUncombo))
+        if (IsEnabled(CustomUncomboPreset.ReaperGrimReapingUncombo))
         {
 
             if (actionID == BLU.BLU11)
@@ -161,7 +159,7 @@ internal class ReaperUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.ReaperHarvestMoonUncombo))
+        if (IsEnabled(CustomUncomboPreset.ReaperHarvestMoonUncombo))
         {
             if (actionID == BLU.BLU13)
             {
@@ -174,7 +172,7 @@ internal class ReaperUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.ReaperLemureUncombo))
+        if (IsEnabled(CustomUncomboPreset.ReaperLemureUncombo))
         {
             if (actionID == BLU.BLU1)
             {
@@ -197,7 +195,7 @@ internal class ReaperUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.ReaperSacrificiumUncombo))
+        if (IsEnabled(CustomUncomboPreset.ReaperSacrificiumUncombo))
         {
             if (actionID == BLU.BLU18)
             {
@@ -210,7 +208,7 @@ internal class ReaperUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.ReaperExecutionerGibbetUncombo))
+        if (IsEnabled(CustomUncomboPreset.ReaperExecutionerGibbetUncombo))
         {
             if (actionID == BLU.BLU7)
             {
@@ -223,7 +221,7 @@ internal class ReaperUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.ReaperExecutionerGallowsUncombo))
+        if (IsEnabled(CustomUncomboPreset.ReaperExecutionerGallowsUncombo))
         {
 
             if (actionID == BLU.BLU8)
@@ -237,7 +235,7 @@ internal class ReaperUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.ReaperExecutionerGuillotineUncombo))
+        if (IsEnabled(CustomUncomboPreset.ReaperExecutionerGuillotineUncombo))
         {
 
             if (actionID == BLU.BLU9)
@@ -251,7 +249,7 @@ internal class ReaperUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.ReaperPerfectioUncombo))
+        if (IsEnabled(CustomUncomboPreset.ReaperPerfectioUncombo))
         {
             if (actionID == BLU.BLU23)
             {

@@ -6,7 +6,6 @@ using Dalamud.Configuration;
 using Dalamud.Utility;
 using Newtonsoft.Json;
 using XIVUncombo.Attributes;
-using XIVUncombo.Combos;
 
 namespace XIVUncombo;
 
@@ -16,15 +15,15 @@ namespace XIVUncombo;
 [Serializable]
 public class PluginConfiguration : IPluginConfiguration
 {
-    private static readonly Dictionary<CustomComboPreset, CustomComboPreset?> ParentCombos;  // child: parent
+    private static readonly Dictionary<CustomUncomboPreset, CustomUncomboPreset?> ParentCombos;  // child: parent
 
     static PluginConfiguration()
     {
-        ParentCombos = Enum.GetValues<CustomComboPreset>()
+        ParentCombos = Enum.GetValues<CustomUncomboPreset>()
             .Distinct() // Prevent ArgumentExceptions from adding the same int twice, should not be seen anymore
             .ToDictionary(
                 preset => preset,
-                preset => preset.GetAttribute<ParentComboAttribute>()?.ParentPreset);
+                preset => preset.GetAttribute<ParentUncomboAttribute>()?.ParentPreset);
     }
 
     /// <summary>
@@ -35,7 +34,7 @@ public class PluginConfiguration : IPluginConfiguration
     /// <summary>
     /// Gets or sets the collection of enabled combos.
     /// </summary>
-    public HashSet<CustomComboPreset> EnabledActions { get; set; } = new();
+    public HashSet<CustomUncomboPreset> EnabledActions { get; set; } = new();
 
     /// <summary>
     /// Gets or sets a value indicating whether to enable the plugin or not.
@@ -67,12 +66,12 @@ public class PluginConfiguration : IPluginConfiguration
     /// <summary>
     /// Gets or sets a value indicating whether to increase the icons of the jobs on the sidebar or not.
     /// </summary>
-    public bool BigJobIcons { get; set; } = false;
+    public bool BigJobIcons { get; set; } = true;
 
     /// <summary>
     /// Gets or sets a value indicating whether increase the icons featured in the combo lists or not.
     /// </summary>
-    public bool BigComboIcons { get; set; } = false;
+    public bool BigComboIcons { get; set; } = true;
 
     /// <summary>
     /// Save the configuration to disk.
@@ -85,7 +84,7 @@ public class PluginConfiguration : IPluginConfiguration
     /// </summary>
     /// <param name="preset">Preset to check.</param>
     /// <returns>The boolean representation.</returns>
-    public bool IsEnabled(CustomComboPreset preset)
+    public bool IsEnabled(CustomUncomboPreset preset)
         => this.EnabledActions.Contains(preset);
 
     /// <summary>
@@ -93,6 +92,6 @@ public class PluginConfiguration : IPluginConfiguration
     /// </summary>
     /// <param name="preset">Preset to check.</param>
     /// <returns>The parent preset.</returns>
-    public CustomComboPreset? GetParent(CustomComboPreset preset)
+    public CustomUncomboPreset? GetParent(CustomUncomboPreset preset)
         => ParentCombos[preset];
 }

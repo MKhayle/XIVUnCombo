@@ -1,9 +1,4 @@
-using System;
-using System.Linq;
-
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class DNC
 {
@@ -70,13 +65,13 @@ internal static class DNC
     }
 }
 
-internal class DancerUncombo : CustomCombo
+internal class DancerUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.DancerUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.DancerUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.DancerEmboiteFeature))
+        if (IsEnabled(CustomUncomboPreset.DancerEmboiteFeature))
         {
             if (actionID == BLU.BLU1)
             {
@@ -94,7 +89,7 @@ internal class DancerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.DancerEntrechatFeature))
+        if (IsEnabled(CustomUncomboPreset.DancerEntrechatFeature))
         {
             if (actionID == BLU.BLU4)
             {
@@ -112,7 +107,7 @@ internal class DancerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.DancerJeteFeature))
+        if (IsEnabled(CustomUncomboPreset.DancerJeteFeature))
         {
             if (actionID == BLU.BLU7)
             {
@@ -130,7 +125,7 @@ internal class DancerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.DancerPirouetteFeature))
+        if (IsEnabled(CustomUncomboPreset.DancerPirouetteFeature))
         {
             if (actionID == BLU.BLU10)
             {
@@ -148,7 +143,7 @@ internal class DancerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.DancerStandardDanceFeature))
+        if (IsEnabled(CustomUncomboPreset.DancerStandardDanceFeature))
         {
             if (actionID == BLU.BLU13)
             {
@@ -161,7 +156,7 @@ internal class DancerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.DancerTechnicalDanceFeature))
+        if (IsEnabled(CustomUncomboPreset.DancerTechnicalDanceFeature))
         {
             if (actionID == BLU.BLU15)
             {
@@ -174,7 +169,7 @@ internal class DancerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.DancerTillanaFeature))
+        if (IsEnabled(CustomUncomboPreset.DancerTillanaFeature))
         {
             if (actionID == BLU.BLU13)
             {
@@ -187,7 +182,7 @@ internal class DancerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.DancerFinishingMoveFeature))
+        if (IsEnabled(CustomUncomboPreset.DancerFinishingMoveFeature))
         {
             if (actionID == BLU.BLU15)
             {
@@ -200,7 +195,7 @@ internal class DancerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.DancerDawnUncombo))
+        if (IsEnabled(CustomUncomboPreset.DancerDawnUncombo))
         {
             if (actionID == BLU.BLU19)
             {

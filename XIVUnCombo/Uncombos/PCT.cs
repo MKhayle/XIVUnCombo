@@ -1,10 +1,4 @@
-﻿using System;
-
-using Dalamud.Game.ClientState.JobGauge.Types;
-using FFXIVClientStructs.FFXIV.Client.Game.Gauge;
-using XIVUncombo.Combos;
-
-namespace XIVUncombo.Combos;
+﻿namespace XIVUncombo.Uncombos;
 
 internal static class PCT
 {
@@ -102,100 +96,164 @@ internal static class PCT
             StarPrism2 = 100;
     }
 
-    internal class PictomancerUncombo : CustomCombo
+    internal class PictomancerUncombo : CustomUncombo
     {
-        protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.PictomancerUncombo;
+        protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.PictomancerUncombo;
 
-        protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+        protected override uint Invoke(uint actionID, byte level)
         {
-            if (IsEnabled(CustomComboPreset.PictomancerFireUncombo))
+            if (IsEnabled(CustomUncomboPreset.PictomancerFireUncombo))
             {
                 if (actionID == BLU.BLU1)
                 {
-                    return PCT.FireRed;
+                    return FireRed;
                 }
 
                 if (actionID == BLU.BLU2)
                 {
-                    return PCT.AeroGreen;
+                    return AeroGreen;
                 }
 
                 if (actionID == BLU.BLU3)
                 {
-                    return PCT.WaterBlue;
+                    return WaterBlue;
                 }
             }
 
-            if (IsEnabled(CustomComboPreset.PictomancerFire2Uncombo))
+            if (IsEnabled(CustomUncomboPreset.PictomancerFire2Uncombo))
             {
                 if (actionID == BLU.BLU4)
                 {
-                    return PCT.ExtraFireRed;
+                    return ExtraFireRed;
                 }
 
                 if (actionID == BLU.BLU5)
                 {
-                    return PCT.ExtraAeroGreen;
+                    return ExtraAeroGreen;
                 }
 
                 if (actionID == BLU.BLU6)
                 {
-                    return PCT.ExtraWaterBlue;
+                    return ExtraWaterBlue;
                 }
             }
 
-            if (IsEnabled(CustomComboPreset.PictomancerBlizzardUncombo))
+            if (IsEnabled(CustomUncomboPreset.PictomancerBlizzardUncombo))
             {
                 if (actionID == BLU.BLU7)
                 {
-                    return PCT.BlizzardCyan;
+                    return BlizzardCyan;
                 }
 
                 if (actionID == BLU.BLU8)
                 {
-                    return PCT.EarthYellow;
+                    return EarthYellow;
                 }
 
                 if (actionID == BLU.BLU9)
                 {
-                    return PCT.ThunderMagenta;
+                    return ThunderMagenta;
                 }
             }
 
-            if (IsEnabled(CustomComboPreset.PictomancerBlizzard2Uncombo))
+            if (IsEnabled(CustomUncomboPreset.PictomancerBlizzard2Uncombo))
             {
                 if (actionID == BLU.BLU10)
                 {
-                    return PCT.ExtraBlizzardCyan;
+                    return ExtraBlizzardCyan;
                 }
 
                 if (actionID == BLU.BLU11)
                 {
-                    return PCT.ExtraEarthYellow;
+                    return ExtraEarthYellow;
                 }
 
                 if (actionID == BLU.BLU12)
                 {
-                    return PCT.ExtraThunderMagenta;
+                    return ExtraThunderMagenta;
                 }
             }
 
-            if (IsEnabled(CustomComboPreset.PictomancerHammerUncombo))
+            if (IsEnabled(CustomUncomboPreset.PictomancerEarlyCreatureUncombo))
             {
-                // Hammer
                 if (actionID == BLU.BLU13)
                 {
-                    return PCT.HammerStamp;
+                    return PomMotif;
                 }
 
                 if (actionID == BLU.BLU14)
                 {
-                    return PCT.HammerBrush;
+                    return PomMuse;
                 }
 
                 if (actionID == BLU.BLU15)
                 {
-                    return PCT.PolishingHammer;
+                    return WingMotif;
+                }
+
+                if (actionID == BLU.BLU16)
+                {
+                    return WingedMuse;
+                }
+            }
+
+            if (IsEnabled(CustomUncomboPreset.PictomancerHammerUncombo))
+            {
+                // Hammer
+                if (actionID == BLU.BLU17)
+                {
+                    return HammerMotif;
+                }
+
+                if (actionID == BLU.BLU18)
+                {
+                    return HammerStamp;
+                }
+
+                if (actionID == BLU.BLU19)
+                {
+                    return HammerBrush;
+                }
+
+                if (actionID == BLU.BLU20)
+                {
+                    return PolishingHammer;
+                }
+            }
+
+            if (IsEnabled(CustomUncomboPreset.PictomancerEarlyCreatureUncombo))
+            {
+                if (actionID == BLU.BLU21)
+                {
+                    return ClawMotif;
+                }
+
+                if (actionID == BLU.BLU22)
+                {
+                    return ClawedMuse;
+                }
+
+                if (actionID == BLU.BLU23)
+                {
+                    return MawMotif;
+                }
+
+                if (actionID == BLU.BLU24)
+                {
+                    return FangedMuse;
+                }
+            }
+
+            if (IsEnabled(CustomUncomboPreset.PictomancerEarlyCreatureUncombo))
+            {
+                if (actionID == BLU.BLU25)
+                {
+                    return MogOftheAges;
+                }
+
+                if (actionID == BLU.BLU26)
+                {
+                    return Retribution;
                 }
             }
 

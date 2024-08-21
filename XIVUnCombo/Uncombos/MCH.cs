@@ -1,8 +1,4 @@
-using System;
-
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class MCH
 {
@@ -74,13 +70,13 @@ internal static class MCH
     }
 }
 
-internal class MachinistUncombo : CustomCombo
+internal class MachinistUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.MachinistUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.MachinistUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.MachinistWildfireUncombo))
+        if (IsEnabled(CustomUncomboPreset.MachinistWildfireUncombo))
         {
             if (actionID == BLU.BLU1)
             {
@@ -93,7 +89,7 @@ internal class MachinistUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.MachinistExcavatorUncombo))
+        if (IsEnabled(CustomUncomboPreset.MachinistExcavatorUncombo))
         {
             if (actionID == BLU.BLU3)
             {

@@ -1,7 +1,4 @@
-using Dalamud.Game.ClientState.JobGauge.Enums;
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class SAM
 {
@@ -71,13 +68,13 @@ internal static class SAM
     }
 }
 
-internal class SamuraiUncombo : CustomCombo
+internal class SamuraiUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.SamuraiUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.SamuraiUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.SamuraiHiganbanaFeature))
+        if (IsEnabled(CustomUncomboPreset.SamuraiHiganbanaFeature))
         {
             if (actionID == BLU.BLU1)
             {
@@ -85,7 +82,7 @@ internal class SamuraiUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SamuraiGokenFeature))
+        if (IsEnabled(CustomUncomboPreset.SamuraiGokenFeature))
         {
             if (actionID == BLU.BLU2)
             {
@@ -93,14 +90,14 @@ internal class SamuraiUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SamuraiMidareFeature))
+        if (IsEnabled(CustomUncomboPreset.SamuraiMidareFeature))
         {
             if (actionID == BLU.BLU3)
             {
                 return SAM.Midare;
             }
         }
-        if (IsEnabled(CustomComboPreset.SamuraiKaeshiGokenFeature))
+        if (IsEnabled(CustomUncomboPreset.SamuraiKaeshiGokenFeature))
         {
             if (actionID == BLU.BLU4)
             {
@@ -108,7 +105,7 @@ internal class SamuraiUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SamuraiKaeshiSetsugekkaFeature))
+        if (IsEnabled(CustomUncomboPreset.SamuraiKaeshiSetsugekkaFeature))
         {
             if (actionID == BLU.BLU5)
             {
@@ -116,7 +113,7 @@ internal class SamuraiUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SamuraiKaeshiNamikiriFeature))
+        if (IsEnabled(CustomUncomboPreset.SamuraiKaeshiNamikiriFeature))
         {
             if (actionID == BLU.BLU6)
             {
@@ -128,7 +125,7 @@ internal class SamuraiUncombo : CustomCombo
                 return SAM.KaeshiNamikiri;
             }
         }
-        if (IsEnabled(CustomComboPreset.SamuraiTendoGokenFeature))
+        if (IsEnabled(CustomUncomboPreset.SamuraiTendoGokenFeature))
         {
             if (actionID == BLU.BLU8)
             {
@@ -136,14 +133,14 @@ internal class SamuraiUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SamuraiTendoMidareFeature))
+        if (IsEnabled(CustomUncomboPreset.SamuraiTendoMidareFeature))
         {
             if (actionID == BLU.BLU9)
             {
                 return SAM.TendoSetsugekka;
             }
         }
-        if (IsEnabled(CustomComboPreset.SamuraiTendoKaeshiGokenFeature))
+        if (IsEnabled(CustomUncomboPreset.SamuraiTendoKaeshiGokenFeature))
         {
             if (actionID == BLU.BLU10)
             {
@@ -151,7 +148,7 @@ internal class SamuraiUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SamuraiTendoKaeshiMidareFeature))
+        if (IsEnabled(CustomUncomboPreset.SamuraiTendoKaeshiMidareFeature))
         {
             if (actionID == BLU.BLU11)
             {

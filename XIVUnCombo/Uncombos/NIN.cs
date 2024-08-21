@@ -1,6 +1,4 @@
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class NIN
 {
@@ -87,13 +85,13 @@ internal static class NIN
     }
 }
 
-internal class NinjaUncombo : CustomCombo
+internal class NinjaUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.NinjaUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.NinjaUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.NinjaFumaShurikenFeature))
+        if (IsEnabled(CustomUncomboPreset.NinjaFumaShurikenFeature))
         {
             if (actionID == BLU.BLU1)
             {
@@ -101,7 +99,7 @@ internal class NinjaUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.NinjaKatonFeature))
+        if (IsEnabled(CustomUncomboPreset.NinjaKatonFeature))
         {
             if (actionID == BLU.BLU2)
             {
@@ -109,7 +107,7 @@ internal class NinjaUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.NinjaRaitonFeature))
+        if (IsEnabled(CustomUncomboPreset.NinjaRaitonFeature))
         {
             if (actionID == BLU.BLU3)
             {
@@ -117,7 +115,7 @@ internal class NinjaUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.NinjaHyotonFeature))
+        if (IsEnabled(CustomUncomboPreset.NinjaHyotonFeature))
         {
             if (actionID == BLU.BLU4)
             {
@@ -125,7 +123,7 @@ internal class NinjaUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.NinjaHutonFeature))
+        if (IsEnabled(CustomUncomboPreset.NinjaHutonFeature))
         {
             if (actionID == BLU.BLU5)
             {
@@ -133,7 +131,7 @@ internal class NinjaUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.NinjaDotonFeature))
+        if (IsEnabled(CustomUncomboPreset.NinjaDotonFeature))
         {
             if (actionID == BLU.BLU6)
             {
@@ -141,7 +139,7 @@ internal class NinjaUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.NinjaSuitonFeature))
+        if (IsEnabled(CustomUncomboPreset.NinjaSuitonFeature))
         {
             if (actionID == BLU.BLU7)
             {
@@ -149,7 +147,7 @@ internal class NinjaUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.NinjaGokaMekkyakuFeature))
+        if (IsEnabled(CustomUncomboPreset.NinjaGokaMekkyakuFeature))
         {
             if (actionID == BLU.BLU8)
             {
@@ -157,7 +155,7 @@ internal class NinjaUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.NinjaHyoshoRanryuFeature))
+        if (IsEnabled(CustomUncomboPreset.NinjaHyoshoRanryuFeature))
         {
             if (actionID == BLU.BLU9)
             {
@@ -165,7 +163,7 @@ internal class NinjaUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.NinjaKuchiyoseGamasenFeature))
+        if (IsEnabled(CustomUncomboPreset.NinjaKuchiyoseGamasenFeature))
         {
             if (actionID == BLU.BLU10)
             {
@@ -178,7 +176,7 @@ internal class NinjaUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.NinjaHyoshoRanryuFeature))
+        if (IsEnabled(CustomUncomboPreset.NinjaHyoshoRanryuFeature))
         {
             if (actionID == BLU.BLU12)
             {
@@ -191,7 +189,7 @@ internal class NinjaUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.NinjaTenriJidoUncombo))
+        if (IsEnabled(CustomUncomboPreset.NinjaTenriJidoUncombo))
         {
             if (actionID == BLU.BLU14)
             {

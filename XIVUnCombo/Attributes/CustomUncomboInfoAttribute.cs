@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-using XIVUncombo.Combos;
+using XIVUncombo.Uncombos;
 
 namespace XIVUncombo.Attributes;
 
@@ -9,16 +9,16 @@ namespace XIVUncombo.Attributes;
 /// Attribute documenting additional information for each combo.
 /// </summary>
 [AttributeUsage(AttributeTargets.Field)]
-internal class CustomComboInfoAttribute : Attribute
+internal class CustomUncomboInfoAttribute : Attribute
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="CustomComboInfoAttribute"/> class.
+    /// Initializes a new instance of the <see cref="CustomUncomboInfoAttribute"/> class.
     /// </summary>
     /// <param name="fancyName">Display name.</param>
     /// <param name="description">Combo description.</param>
     /// <param name="jobID">Associated job ID.</param>
     /// <param name="order">Display order.</param>
-    internal CustomComboInfoAttribute(string fancyName, string description, byte jobID, [CallerLineNumber] int order = 0)
+    internal CustomUncomboInfoAttribute(string fancyName, string description, byte jobID, [CallerLineNumber] int order = 0)
     {
         this.FancyName = fancyName;
         this.Description = description;

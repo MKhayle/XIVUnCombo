@@ -1,6 +1,4 @@
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class DRG
 {
@@ -74,13 +72,13 @@ internal static class DRG
     }
 }
 
-internal class DragoonUncombo : CustomCombo
+internal class DragoonUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.DragoonUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.DragoonUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.DragoonDrakesbaneUncombo))
+        if (IsEnabled(CustomUncomboPreset.DragoonDrakesbaneUncombo))
         {
             if (actionID == BLU.BLU1)
             {
@@ -98,7 +96,7 @@ internal class DragoonUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.DragoonRaidenThrustUncombo))
+        if (IsEnabled(CustomUncomboPreset.DragoonRaidenThrustUncombo))
         {
             if (actionID == BLU.BLU4)
             {
@@ -111,7 +109,7 @@ internal class DragoonUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.DragoonDraconianFuryUncombo))
+        if (IsEnabled(CustomUncomboPreset.DragoonDraconianFuryUncombo))
         {
             if (actionID == BLU.BLU6)
             {

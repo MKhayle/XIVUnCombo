@@ -1,6 +1,4 @@
-﻿using Dalamud.Game.ClientState.Conditions;
-
-namespace XIVUncombo.Combos;
+﻿namespace XIVUncombo.Uncombos;
 
 internal static class DOL
 {

@@ -4,9 +4,8 @@ using System.Linq;
 using System.Reflection;
 
 using Dalamud.Hooking;
-using Dalamud.Logging;
 using Dalamud.Plugin.Services;
-using XIVUncombo.Combos;
+using XIVUncombo.Uncombos;
 
 namespace XIVUncombo;
 
@@ -15,7 +14,7 @@ namespace XIVUncombo;
 /// </summary>
 internal sealed partial class IconReplacer : IDisposable
 {
-    private readonly List<CustomCombo> customCombos;
+    private readonly List<CustomUncombo> customCombos;
     private readonly Hook<IsIconReplaceableDelegate> isIconReplaceableHook;
     private readonly Hook<GetIconDelegate> getIconHook;
 
@@ -26,10 +25,10 @@ internal sealed partial class IconReplacer : IDisposable
     /// </summary>
     public IconReplacer(IGameInteropProvider gameInteropProvider)
     {
-        this.customCombos = Assembly.GetAssembly(typeof(CustomCombo))!.GetTypes()
-            .Where(t => !t.IsAbstract && IsDescendant(t, typeof(CustomCombo)))
+        this.customCombos = Assembly.GetAssembly(typeof(CustomUncombo))!.GetTypes()
+            .Where(t => !t.IsAbstract && IsDescendant(t, typeof(CustomUncombo)))
             .Select(t => Activator.CreateInstance(t))
-            .Cast<CustomCombo>()
+            .Cast<CustomUncombo>()
             .ToList();
 
         this.getIconHook = gameInteropProvider.HookFromAddress<GetIconDelegate>(FFXIVClientStructs.FFXIV.Client.Game.ActionManager.Addresses.GetAdjustedActionId.Value, this.GetIconDetour);
@@ -74,13 +73,11 @@ internal sealed partial class IconReplacer : IDisposable
             if (Service.ClientState.LocalPlayer == null)
                 return this.OriginalHook(actionID);
 
-            var lastComboMove = *(uint*)Service.Address.LastComboMove;
-            var comboTime = *(float*)Service.Address.ComboTimer;
             var level = Service.ClientState.LocalPlayer?.Level ?? 0;
 
             foreach (var combo in this.customCombos)
             {
-                if (combo.TryInvoke(actionID, level, lastComboMove, comboTime, out var newActionID))
+                if (combo.TryInvoke(actionID, level, out var newActionID))
                     return newActionID;
             }
 

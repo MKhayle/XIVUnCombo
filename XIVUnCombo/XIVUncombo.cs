@@ -72,7 +72,7 @@ public sealed partial class XIVUncombo : IDalamudPlugin
     {
         if (Service.Configuration.AutoJobChange)
         {
-            string job = Service.ClientState.LocalPlayer?.ClassJob.Id != null ? CustomComboInfoAttribute.JobIDToName((byte)Service.ClientState.LocalPlayer?.ClassJob.Id) : Service.Configuration.CurrentJobTab;
+            string job = Service.ClientState.LocalPlayer?.ClassJob.Id != null ? CustomUncomboInfoAttribute.JobIDToName((byte)Service.ClientState.LocalPlayer?.ClassJob.Id) : Service.Configuration.CurrentJobTab;
             if (job is "Adventurer" or "Disciples of the Hand" or "Disciples of the Land" or "White Mage" or "Sage" or "Scholar"
                 || Service.Configuration.CurrentJobTab is "Adventurer" or "Disciples of the Hand" or "Disciples of the Land" or "White Mage" or "Sage" or "Scholar")
                 job = "Paladin";
@@ -90,7 +90,7 @@ public sealed partial class XIVUncombo : IDalamudPlugin
         {
             case "setall":
                 {
-                    foreach (var preset in Enum.GetValues<CustomComboPreset>())
+                    foreach (var preset in Enum.GetValues<CustomUncomboPreset>())
                     {
                         Service.Configuration.EnabledActions.Add(preset);
                     }
@@ -102,7 +102,7 @@ public sealed partial class XIVUncombo : IDalamudPlugin
 
             case "unsetall":
                 {
-                    foreach (var preset in Enum.GetValues<CustomComboPreset>())
+                    foreach (var preset in Enum.GetValues<CustomUncomboPreset>())
                     {
                         Service.Configuration.EnabledActions.Remove(preset);
                     }
@@ -115,7 +115,7 @@ public sealed partial class XIVUncombo : IDalamudPlugin
             default:
                 if (Service.Configuration.AutoJobChange)
                 {
-                    string job = Service.ClientState.LocalPlayer?.ClassJob.Id != null ? CustomComboInfoAttribute.JobIDToName((byte)Service.ClientState.LocalPlayer?.ClassJob.Id) : Service.Configuration.CurrentJobTab;
+                    string job = Service.ClientState.LocalPlayer?.ClassJob.Id != null ? CustomUncomboInfoAttribute.JobIDToName((byte)Service.ClientState.LocalPlayer?.ClassJob.Id) : Service.Configuration.CurrentJobTab;
                     if (job is "Adventurer" or "Disciples of the Hand" or "Disciples of the Land" or "White Mage" or "Sage" or "Scholar"
                         || Service.Configuration.CurrentJobTab is "Adventurer" or "Disciples of the Hand" or "Disciples of the Land" or "White Mage" or "Sage" or "Scholar")
                         job = "Paladin";

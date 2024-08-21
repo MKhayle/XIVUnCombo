@@ -1,28 +1,21 @@
-using System;
-using System.Linq;
-
-using Dalamud.Game.ClientState.Conditions;
-using Dalamud.Game.ClientState.JobGauge.Types;
-using Dalamud.Game.ClientState.Objects.Enums;
 using Dalamud.Game.ClientState.Objects.SubKinds;
-using Dalamud.Game.ClientState.Objects.Types;
-using Dalamud.Game.ClientState.Statuses;
 using Dalamud.Utility;
 using XIVUncombo.Attributes;
+using XIVUncombo.Uncombos;
 
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 /// <summary>
 /// Base class for each combo.
 /// </summary>
-internal abstract partial class CustomCombo
+internal abstract partial class CustomUncombo
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="CustomCombo"/> class.
+    /// Initializes a new instance of the <see cref="CustomUncombo"/> class.
     /// </summary>
-    protected CustomCombo()
+    protected CustomUncombo()
     {
-        var presetInfo = this.Preset.GetAttribute<CustomComboInfoAttribute>();
+        var presetInfo = this.Preset.GetAttribute<CustomUncomboInfoAttribute>();
         this.JobID = presetInfo.JobID;
         this.ClassID = this.JobID switch
         {
@@ -44,7 +37,7 @@ internal abstract partial class CustomCombo
     /// <summary>
     /// Gets the preset associated with this combo.
     /// </summary>
-    protected internal abstract CustomComboPreset Preset { get; }
+    protected internal abstract CustomUncomboPreset Preset { get; }
 
     /// <summary>
     /// Gets the class ID associated with this combo.
@@ -61,11 +54,9 @@ internal abstract partial class CustomCombo
     /// </summary>
     /// <param name="actionID">Starting action ID.</param>
     /// <param name="level">Player level.</param>
-    /// <param name="lastComboMove">Last combo action ID.</param>
-    /// <param name="comboTime">Combo timer.</param>
     /// <param name="newActionID">Replacement action ID.</param>
     /// <returns>True if the action has changed, otherwise false.</returns>
-    public bool TryInvoke(uint actionID, byte level, uint lastComboMove, float comboTime, out uint newActionID)
+    public bool TryInvoke(uint actionID, byte level, out uint newActionID)
     {
         newActionID = 0;
 
@@ -84,7 +75,7 @@ internal abstract partial class CustomCombo
             this.JobID != classJobID && this.ClassID != classJobID)
             return false;
 
-        var resultingActionID = this.Invoke(actionID, lastComboMove, comboTime, level);
+        var resultingActionID = this.Invoke(actionID, level);
 
         if (resultingActionID == 0 || actionID == resultingActionID)
             return false;
@@ -97,17 +88,15 @@ internal abstract partial class CustomCombo
     /// Invokes the combo.
     /// </summary>
     /// <param name="actionID">Starting action ID.</param>
-    /// <param name="lastComboActionID">Last combo action.</param>
-    /// <param name="comboTime">Current combo time.</param>
     /// <param name="level">Current player level.</param>
     /// <returns>The replacement action ID.</returns>
-    protected abstract uint Invoke(uint actionID, uint lastComboActionID, float comboTime, byte level);
+    protected abstract uint Invoke(uint actionID, byte level);
 }
 
 /// <summary>
 /// Passthrough methods and properties to IconReplacer. Shortens what it takes to call each method.
 /// </summary>
-internal abstract partial class CustomCombo
+internal abstract partial class CustomUncombo
 {
     /// <summary>
     /// Gets the player or null.
@@ -136,7 +125,7 @@ internal abstract partial class CustomCombo
     /// </summary>
     /// <param name="preset">Preset to check.</param>
     /// <returns>A value indicating whether the preset is enabled.</returns>
-    protected static bool IsEnabled(CustomComboPreset preset)
+    protected static bool IsEnabled(CustomUncomboPreset preset)
         => (int)preset < 100 || Service.Configuration.IsEnabled(preset);
 
 }

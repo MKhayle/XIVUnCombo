@@ -1,8 +1,4 @@
-using System;
-
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class WAR
 {
@@ -60,13 +56,13 @@ internal static class WAR
     }
 }
 
-internal class WarriorUncombo : CustomCombo
+internal class WarriorUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.WarriorUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.WarriorUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.WarriorChaoticCycloneUncombo))
+        if (IsEnabled(CustomUncomboPreset.WarriorChaoticCycloneUncombo))
         {
             if (actionID == BLU.BLU1)
             {
@@ -79,7 +75,7 @@ internal class WarriorUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.WarriorInnerChaosUncombo))
+        if (IsEnabled(CustomUncomboPreset.WarriorInnerChaosUncombo))
         {
             if (actionID == BLU.BLU3)
             {
@@ -92,7 +88,7 @@ internal class WarriorUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.WarriorPrimalWrathUncombo))
+        if (IsEnabled(CustomUncomboPreset.WarriorPrimalWrathUncombo))
         {
             if (actionID == BLU.BLU5)
             {
@@ -105,7 +101,7 @@ internal class WarriorUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.WarriorPrimalRuinationUncombo))
+        if (IsEnabled(CustomUncomboPreset.WarriorPrimalRuinationUncombo))
         {
             if (actionID == BLU.BLU7)
             {

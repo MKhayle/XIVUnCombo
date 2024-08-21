@@ -1,4 +1,4 @@
-﻿namespace XIVUncombo.Combos;
+﻿namespace XIVUncombo.Uncombos;
 
 internal static class DOH
 {

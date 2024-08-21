@@ -1,6 +1,4 @@
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class SMN
 {
@@ -118,13 +116,13 @@ internal static class SMN
     }
 }
 
-internal class SummonerUncombo : CustomCombo
+internal class SummonerUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.SummonerUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.SummonerUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.SummonerGemshineIfritFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerGemshineIfritFeature))
         {
             if (actionID == BLU.BLU1)
             {
@@ -138,7 +136,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerGemshineTitanFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerGemshineTitanFeature))
         {
             if (actionID == BLU.BLU2)
             {
@@ -152,7 +150,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerGemshineGarudaFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerGemshineGarudaFeature))
         {
             if (actionID == BLU.BLU3)
             {
@@ -166,7 +164,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerBrillanceIfritFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerBrillanceIfritFeature))
         {
             if (actionID == BLU.BLU4)
             {
@@ -176,7 +174,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerBrillanceTitanFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerBrillanceTitanFeature))
         {
             if (actionID == BLU.BLU5)
             {
@@ -186,7 +184,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerBrillanceGarudaFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerBrillanceGarudaFeature))
         {
             if (actionID == BLU.BLU6)
             {
@@ -196,7 +194,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerRuinBahamutFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerRuinBahamutFeature))
         {
             if (actionID == BLU.BLU7)
             {
@@ -213,7 +211,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerRuinPhoenixFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerRuinPhoenixFeature))
         {
             if (actionID == BLU.BLU7)
             {
@@ -230,7 +228,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerRuinSolarBahamutFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerRuinSolarBahamutFeature))
         {
             if (actionID == BLU.BLU7)
             {
@@ -247,7 +245,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerTriDisasterBahamutFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerTriDisasterBahamutFeature))
         {
             if (actionID == BLU.BLU11)
             {
@@ -262,7 +260,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerTriDisasterPhoenixFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerTriDisasterPhoenixFeature))
         {
             if (actionID == BLU.BLU11)
             {
@@ -277,7 +275,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerTriDisasterSolarBahamutFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerTriDisasterSolarBahamutFeature))
         {
             if (actionID == BLU.BLU11)
             {
@@ -292,7 +290,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerIfritFlowFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerIfritFlowFeature))
         {
             if (actionID == BLU.BLU15)
             {
@@ -305,7 +303,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerTitanFlowFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerTitanFlowFeature))
         {
             if (actionID == BLU.BLU17)
             {
@@ -313,7 +311,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerGarudaFlowFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerGarudaFlowFeature))
         {
             if (actionID == BLU.BLU18)
             {
@@ -321,7 +319,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerBahamutFlowFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerBahamutFlowFeature))
         {
             if (actionID == BLU.BLU19)
             {
@@ -329,7 +327,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerPhoenixFlowFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerPhoenixFlowFeature))
         {
             if (actionID == BLU.BLU20)
             {
@@ -337,7 +335,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerSolarBahamutFlowFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerSolarBahamutFlowFeature))
         {
             if (actionID == BLU.BLU21)
             {
@@ -345,7 +343,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummoneBahamutEnkindleFeature))
+        if (IsEnabled(CustomUncomboPreset.SummoneBahamutEnkindleFeature))
         {
             if (actionID == BLU.BLU22)
             {
@@ -353,7 +351,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerPhoenixEnkindleFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerPhoenixEnkindleFeature))
         {
             if (actionID == BLU.BLU23)
             {
@@ -361,7 +359,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerSolarBahamutEnkindleFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerSolarBahamutEnkindleFeature))
         {
             if (actionID == BLU.BLU24)
             {
@@ -369,7 +367,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerBahamutSummoningFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerBahamutSummoningFeature))
         {
             if (actionID == BLU.BLU25)
             {
@@ -381,7 +379,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerPhoenixSummoningFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerPhoenixSummoningFeature))
         {
             if (actionID == BLU.BLU26)
             {
@@ -389,7 +387,7 @@ internal class SummonerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.SummonerSolarBahamutSummoningFeature))
+        if (IsEnabled(CustomUncomboPreset.SummonerSolarBahamutSummoningFeature))
         {
             if (actionID == BLU.BLU27)
             {

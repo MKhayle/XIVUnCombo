@@ -1,4 +1,4 @@
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class PLD
 {
@@ -63,13 +63,13 @@ internal static class PLD
     }
 }
 
-internal class PaladinUncombo : CustomCombo
+internal class PaladinUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.PaladinUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.PaladinUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.PaladinImperatorBladesUncombo))
+        if (IsEnabled(CustomUncomboPreset.PaladinImperatorBladesUncombo))
         {
             if (actionID == BLU.BLU1)
             {
@@ -84,7 +84,7 @@ internal class PaladinUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.PaladinBladesUncombo))
+        if (IsEnabled(CustomUncomboPreset.PaladinBladesUncombo))
         {
             if (actionID == BLU.BLU3)
             {
@@ -107,7 +107,7 @@ internal class PaladinUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.PaladinAtonementUncombo))
+        if (IsEnabled(CustomUncomboPreset.PaladinAtonementUncombo))
         {
             if (actionID == BLU.BLU7)
             {

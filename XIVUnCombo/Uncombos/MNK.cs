@@ -1,10 +1,4 @@
-using System;
-using System.Linq;
-
-using Dalamud.Game.ClientState.JobGauge.Enums;
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class MNK
 {
@@ -88,34 +82,34 @@ internal static class MNK
     }
 }
 
-internal class MonkUncombo : CustomCombo
+internal class MonkUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.MonkUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.MonkUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.MonkUncombo))
+        if (IsEnabled(CustomUncomboPreset.MonkUncombo))
         {
-            if (actionID == BLU.BLU1 && IsEnabled(CustomComboPreset.MonkBlitzElixirUncombo))
+            if (actionID == BLU.BLU1 && IsEnabled(CustomUncomboPreset.MonkBlitzElixirUncombo))
             {
                 if (level <= MNK.Levels.ElixirBurst)
                     return MNK.ElixirField;
                 else return MNK.ElixirBurst;
             }
 
-            if (actionID == BLU.BLU2 && IsEnabled(CustomComboPreset.MonkBlitzCelestialUncombo))
+            if (actionID == BLU.BLU2 && IsEnabled(CustomUncomboPreset.MonkBlitzCelestialUncombo))
             {
                 return MNK.CelestialRevolution;
             }
 
-            if (actionID == BLU.BLU3 && IsEnabled(CustomComboPreset.MonkBlitzFlintUncombo))
+            if (actionID == BLU.BLU3 && IsEnabled(CustomUncomboPreset.MonkBlitzFlintUncombo))
             {
                 if (level <= MNK.Levels.RisingPhoenix)
                     return MNK.FlintStrike;
                 else return MNK.RisingPhoenix;
             }
 
-            if (actionID == BLU.BLU4 && IsEnabled(CustomComboPreset.MonkBlitzTornadoUncombo))
+            if (actionID == BLU.BLU4 && IsEnabled(CustomUncomboPreset.MonkBlitzTornadoUncombo))
             {
                 if (level <= MNK.Levels.PhantomRush)
                     return MNK.TornadoKick;

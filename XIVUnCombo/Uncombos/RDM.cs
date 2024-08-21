@@ -1,6 +1,4 @@
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class RDM
 {
@@ -78,13 +76,13 @@ internal static class RDM
     }
 }
 
-internal class RedMageUncombo : CustomCombo
+internal class RedMageUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.RedMageUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.RedMageUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.RedMageNonEnchantedSTFeature))
+        if (IsEnabled(CustomUncomboPreset.RedMageNonEnchantedSTFeature))
         {
             if (actionID == BLU.BLU1)
             {
@@ -102,7 +100,7 @@ internal class RedMageUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.RedMageEnchantedSTFeature))
+        if (IsEnabled(CustomUncomboPreset.RedMageEnchantedSTFeature))
         {
             if (actionID == BLU.BLU4)
             {
@@ -120,7 +118,7 @@ internal class RedMageUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.RedMageEnchantedAoEFeature))
+        if (IsEnabled(CustomUncomboPreset.RedMageEnchantedAoEFeature))
         {
             if (actionID == BLU.BLU7)
             {
@@ -143,7 +141,7 @@ internal class RedMageUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.RedMageEnchantedRangedFeature))
+        if (IsEnabled(CustomUncomboPreset.RedMageEnchantedRangedFeature))
         {
             if (actionID == BLU.BLU11)
             {
@@ -155,7 +153,7 @@ internal class RedMageUncombo : CustomCombo
                 return RDM.EnchantedReprise;
             }
         }
-        if (IsEnabled(CustomComboPreset.RedMageVerFlareFeature))
+        if (IsEnabled(CustomUncomboPreset.RedMageVerFlareFeature))
         {
             if (actionID == BLU.BLU13)
             {
@@ -175,7 +173,7 @@ internal class RedMageUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.RedMageVerHolyFeature))
+        if (IsEnabled(CustomUncomboPreset.RedMageVerHolyFeature))
         {
             if (actionID == BLU.BLU16)
             {
@@ -195,7 +193,7 @@ internal class RedMageUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.RedMageScorchFeature))
+        if (IsEnabled(CustomUncomboPreset.RedMageScorchFeature))
         {
             if (actionID == BLU.BLU19)
             {
@@ -215,7 +213,7 @@ internal class RedMageUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.RedMageResolutionFeature))
+        if (IsEnabled(CustomUncomboPreset.RedMageResolutionFeature))
         {
             if (actionID == BLU.BLU22)
             {
@@ -223,7 +221,7 @@ internal class RedMageUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.RedMageGrandImpactUncombo))
+        if (IsEnabled(CustomUncomboPreset.RedMageGrandImpactUncombo))
         {
             if (actionID == BLU.BLU19)
             {
@@ -239,7 +237,7 @@ internal class RedMageUncombo : CustomCombo
         }
 
 
-        if (IsEnabled(CustomComboPreset.RedMagePrefulgenceUncombo))
+        if (IsEnabled(CustomUncomboPreset.RedMagePrefulgenceUncombo))
         {
             if (actionID == BLU.BLU24)
             {

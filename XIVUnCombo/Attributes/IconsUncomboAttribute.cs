@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace XIVUncombo.Attributes;
 
@@ -7,22 +6,22 @@ namespace XIVUncombo.Attributes;
 /// Attribute designating icons to display in action presets.
 /// </summary>
 [AttributeUsage(AttributeTargets.Field)]
-internal class IconsComboAttribute : Attribute
+internal class IconsUncomboAttribute : Attribute
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="IconsComboAttribute"/> class with a single icon.
+    /// Initializes a new instance of the <see cref="IconsUncomboAttribute"/> class with a single icon.
     /// </summary>
     /// <param name="icon">Icon that should be displayed next to the action preset.</param>
-    internal IconsComboAttribute(uint icon)
+    internal IconsUncomboAttribute(uint icon)
     {
         this.Icons = [icon];
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="IconsComboAttribute"/> class with up to 3 icons.
+    /// Initializes a new instance of the <see cref="IconsUncomboAttribute"/> class with up to 3 icons.
     /// </summary>
     /// <param name="icons">Array of icon that should be displayed next to the action preset.</param>
-    internal IconsComboAttribute(uint[] icons)
+    internal IconsUncomboAttribute(uint[] icons)
     {
             this.Icons = icons;
     }

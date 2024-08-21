@@ -1,7 +1,4 @@
-using Dalamud.Game.ClientState.JobGauge.Enums;
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class BRD
 {
@@ -66,13 +63,13 @@ internal static class BRD
     }
 }
 
-internal class BardUncombo : CustomCombo
+internal class BardUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.BardUncombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.BardUncombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.BardBlastArrowUncombo))
+        if (IsEnabled(CustomUncomboPreset.BardBlastArrowUncombo))
         {
             if (actionID == BLU.BLU1)
             {

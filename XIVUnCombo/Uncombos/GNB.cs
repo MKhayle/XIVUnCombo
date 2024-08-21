@@ -1,6 +1,4 @@
-using Dalamud.Game.ClientState.JobGauge.Types;
-
-namespace XIVUncombo.Combos;
+namespace XIVUncombo.Uncombos;
 
 internal static class GNB
 {
@@ -51,13 +49,13 @@ internal static class GNB
     }
 }
 
-internal class GunbreakerUncombo : CustomCombo
+internal class GunbreakerUncombo : CustomUncombo
 {
-    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.GunbreakerUnCombo;
+    protected internal override CustomUncomboPreset Preset { get; } = CustomUncomboPreset.GunbreakerUnCombo;
 
-    protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    protected override uint Invoke(uint actionID, byte level)
     {
-        if (IsEnabled(CustomComboPreset.GunbreakerGnashingUnCombo))
+        if (IsEnabled(CustomUncomboPreset.GunbreakerGnashingUnCombo))
         {
             if (actionID == BLU.BLU1)
             {
@@ -75,7 +73,7 @@ internal class GunbreakerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.GunbreakerConsecutionUncombo))
+        if (IsEnabled(CustomUncomboPreset.GunbreakerConsecutionUncombo))
         {
             if (actionID == BLU.BLU4)
             {
@@ -93,7 +91,7 @@ internal class GunbreakerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.GunbreakerHypervelocityUncombo))
+        if (IsEnabled(CustomUncomboPreset.GunbreakerHypervelocityUncombo))
         {
             if (actionID == BLU.BLU7)
             {
@@ -101,7 +99,7 @@ internal class GunbreakerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.GunbreakerFatedBrandUncombo))
+        if (IsEnabled(CustomUncomboPreset.GunbreakerFatedBrandUncombo))
         {
             if (actionID == BLU.BLU8)
             {
@@ -109,7 +107,7 @@ internal class GunbreakerUncombo : CustomCombo
             }
         }
 
-        if (IsEnabled(CustomComboPreset.GunbreakerReignUncombo))
+        if (IsEnabled(CustomUncomboPreset.GunbreakerReignUncombo))
         {
             if (actionID == BLU.BLU9)
             {
