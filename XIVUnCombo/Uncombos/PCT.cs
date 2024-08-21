@@ -221,7 +221,7 @@ internal static class PCT
                 }
             }
 
-            if (IsEnabled(CustomUncomboPreset.PictomancerEarlyCreatureUncombo))
+            if (IsEnabled(CustomUncomboPreset.PictomancerLateCreatureUncombo))
             {
                 if (actionID == BLU.BLU21)
                 {
@@ -244,7 +244,7 @@ internal static class PCT
                 }
             }
 
-            if (IsEnabled(CustomUncomboPreset.PictomancerEarlyCreatureUncombo))
+            if (IsEnabled(CustomUncomboPreset.PictomancerMogUncombo))
             {
                 if (actionID == BLU.BLU25)
                 {
