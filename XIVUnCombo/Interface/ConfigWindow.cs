@@ -13,7 +13,7 @@ using Dalamud.Utility;
 using ImGuiNET;
 using XIVUncombo.Attributes;
 using XIVUncombo.Uncombos;
-using Action = Lumina.Excel.GeneratedSheets.Action;
+using Action = Lumina.Excel.Sheets.Action;
 using Language = Lumina.Data.Language;
 
 namespace XIVUncombo.Interface;

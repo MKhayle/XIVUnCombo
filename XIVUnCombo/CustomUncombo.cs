@@ -63,7 +63,7 @@ internal abstract partial class CustomUncombo
         if (!IsEnabled(this.Preset))
             return false;
 
-        var classJobID = LocalPlayer!.ClassJob.Id;
+        int classJobID = (int)LocalPlayer!.ClassJob.RowId;
 
         if (classJobID >= 8 && classJobID <= 15)
             classJobID = DOH.JobID;
@@ -79,7 +79,6 @@ internal abstract partial class CustomUncombo
 
         if (resultingActionID == 0 || actionID == resultingActionID)
             return false;
-
         newActionID = resultingActionID;
         return true;
     }
