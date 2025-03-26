@@ -1,15 +1,15 @@
-﻿<Project Sdk="Dalamud.NET.Sdk/11.0.0">
+﻿<Project Sdk="Dalamud.NET.Sdk/12.0.2">
   <PropertyGroup>
     <Authors>Khayle, daemitus, attick</Authors>
     <Company>-</Company>
-    <Version>1.0.0.1</Version>
+    <Version>1.0.1.0</Version>
     <Description>This plugin splits combos and native abilities into more buttons.</Description>
     <Copyright>Copyleft attick 2020 baybeeee</Copyright>
     <PackageProjectUrl>https://github.com/MKhayle/XIVUncombo</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <Platforms>x64</Platforms>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
@@ -48,24 +48,6 @@
   <ItemGroup>
     <None Include="XIVUncombo.json" />
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.435">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <Reference Include="Dalamud" Private="False" />
-    <Reference Include="FFXIVClientStructs" Private="False" />
-    <Reference Include="ImGui.NET" Private="False" />
-    <Reference Include="Lumina" Private="False" />
-    <Reference Include="Lumina.Excel" Private="False" />
-    <Reference Include="Newtonsoft.Json" Private="False" />
-	  <Reference Include="InteropGenerator.Runtime">
-		  <HintPath>$(DalamudLibPath)InteropGenerator.Runtime.dll</HintPath>
-		  <Private>false</Private>
-	  </Reference>
-  </ItemGroup>
-
   <ItemGroup>
     <PackageReference Update="DotNet.ReproducibleBuilds" Version="1.2.25" />
   </ItemGroup>
