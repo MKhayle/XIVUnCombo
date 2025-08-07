@@ -1,8 +1,8 @@
-﻿<Project Sdk="Dalamud.NET.Sdk/12.0.2">
+﻿<Project Sdk="Dalamud.NET.Sdk/13.0.0">
   <PropertyGroup>
     <Authors>Khayle, daemitus, attick</Authors>
     <Company>-</Company>
-    <Version>1.0.1.0</Version>
+    <Version>1.0.2.0</Version>
     <Description>This plugin splits combos and native abilities into more buttons.</Description>
     <Copyright>Copyleft attick 2020 baybeeee</Copyright>
     <PackageProjectUrl>https://github.com/MKhayle/XIVUncombo</PackageProjectUrl>
@@ -30,25 +30,11 @@
     <Content Include="..\res\icon.png" Link="images\icon.png" CopyToOutputDirectory="PreserveNewest" Visible="false" />
   </ItemGroup>
 
-  <PropertyGroup>
-    <DalamudLibPath>$(appdata)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <AssemblySearchPaths>
-      $(AssemblySearchPaths);
-      $(DalamudLibPath);
-    </AssemblySearchPaths>
-  </PropertyGroup>
-
   <ItemGroup>
     <AdditionalFiles Include="..\stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="XIVUncombo.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Update="DotNet.ReproducibleBuilds" Version="1.2.25" />
   </ItemGroup>
 </Project>
