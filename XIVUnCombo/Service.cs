@@ -37,6 +37,12 @@ internal class Service
     internal static IChatGui ChatGui { get; private set; } = null!;
 
     /// <summary>
+    /// Gets the object table.
+    /// </summary>
+    [PluginService]
+    internal static IObjectTable ObjectTable { get; private set; } = null!;
+
+    /// <summary>
     /// Gets the Dalamud client state.
     /// </summary>
     [PluginService]

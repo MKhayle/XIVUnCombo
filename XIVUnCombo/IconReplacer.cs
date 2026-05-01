@@ -70,10 +70,10 @@ internal sealed partial class IconReplacer : IDisposable
 
         try
         {
-            if (Service.ClientState.LocalPlayer == null)
+            if (Service.ObjectTable.LocalPlayer == null)
                 return this.OriginalHook(actionID);
 
-            var level = Service.ClientState.LocalPlayer?.Level ?? 0;
+            var level = Service.ObjectTable.LocalPlayer?.Level ?? 0;
 
             foreach (var combo in this.customCombos)
             {

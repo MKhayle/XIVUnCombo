@@ -101,7 +101,7 @@ internal abstract partial class CustomUncombo
     /// Gets the player or null.
     /// </summary>
     protected static IPlayerCharacter? LocalPlayer
-        => Service.ClientState.LocalPlayer;
+        => Service.ObjectTable.LocalPlayer;
 
     /// <summary>
     /// Calls the original hook.

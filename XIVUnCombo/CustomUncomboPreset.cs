@@ -427,14 +427,14 @@ public enum CustomUncomboPreset
     [CustomUncomboInfo("Fire in Red (lvl 1+)", "Water Cannon, Flame Thrower and Aqua Breath will respectively become Fire in Red, Aero in Green, and Water in Blue.", PCT.JobID)]
     PictomancerFireUncombo = 4202,
 
-    [IconsUncombo([PCT.BlizzardCyan, UTL.ArrowRight, BLU.BLU4, UTL.Blank, PCT.EarthYellow, UTL.ArrowRight, BLU.BLU5, UTL.Blank, PCT.ThunderMagenta, UTL.ArrowRight, BLU.BLU6])]
+    [IconsUncombo([PCT.ExtraFireRed, UTL.ArrowRight, BLU.BLU4, UTL.Blank, PCT.ExtraAeroGreen, UTL.ArrowRight, BLU.BLU5, UTL.Blank, PCT.ExtraWaterBlue, UTL.ArrowRight, BLU.BLU6])]
     [ParentUncombo(PictomancerUncombo)]
-    [CustomUncomboInfo("Blizzard in Cyan (lvl 60+)", "Flying Frenzy, Drill Cannons and High Voltage will respectively become Blizzard in Cyan, Stone in Yellow, and Thunder in Magenta.", PCT.JobID)]
+    [CustomUncomboInfo("Fire II in Red (lvl 50+)", "Flying Frenzy, Drill Cannons and High Voltage will respectively become Fire in Red II, Aero in Green II, and Water in Blue II.", PCT.JobID)]
     PictomancerBlizzardUncombo = 4203,
 
-    [IconsUncombo([PCT.ExtraFireRed, UTL.ArrowRight, BLU.BLU7, UTL.Blank, PCT.ExtraAeroGreen, UTL.ArrowRight, BLU.BLU8, UTL.Blank, PCT.ExtraWaterBlue, UTL.ArrowRight, BLU.BLU9])]
+    [IconsUncombo([PCT.BlizzardCyan, UTL.ArrowRight, BLU.BLU7, UTL.Blank, PCT.EarthYellow, UTL.ArrowRight, BLU.BLU8, UTL.Blank, PCT.ThunderMagenta, UTL.ArrowRight, BLU.BLU9])]
     [ParentUncombo(PictomancerUncombo)]
-    [CustomUncomboInfo("Fire II in Red (lvl 50+)", "Loom, Final Sting and Song of Torment will respectively become Fire in Red II, Aero in Green II, and Water in Blue II.", PCT.JobID)]
+    [CustomUncomboInfo("Blizzard in Cyan (lvl 60+)", "Loom, Final Sting and Song of Torment will respectively become Blizzard in Cyan, Stone in Yellow, and Thunder in Magenta.", PCT.JobID)]
     PictomancerFire2Uncombo = 4204,
 
     [IconsUncombo([PCT.ExtraBlizzardCyan, UTL.ArrowRight, BLU.BLU10, UTL.Blank, PCT.ExtraEarthYellow, UTL.ArrowRight, BLU.BLU11, UTL.Blank, PCT.ExtraThunderMagenta, UTL.ArrowRight, BLU.BLU12])]

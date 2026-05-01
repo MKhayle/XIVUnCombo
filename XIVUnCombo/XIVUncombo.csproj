@@ -1,8 +1,8 @@
-﻿<Project Sdk="Dalamud.NET.Sdk/14.0.1">
+﻿<Project Sdk="Dalamud.NET.Sdk/15.0.0">
   <PropertyGroup>
     <Authors>Khayle, daemitus, attick</Authors>
     <Company>-</Company>
-    <Version>1.0.3.0</Version>
+    <Version>1.0.15.0</Version>
     <Description>This plugin splits combos and native abilities into more buttons.</Description>
     <Copyright>Copyleft attick 2020 baybeeee</Copyright>
     <PackageProjectUrl>https://github.com/MKhayle/XIVUncombo</PackageProjectUrl>
